@@ -58,7 +58,7 @@ export default function CustomStaggeredMenu({
       {/* Botón del menú */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-3 lg:top-6 right-8 text-black text-lg font-medium z-30 bg-white px-4 py-2 rounded-full shadow-md hover:bg-zinc-300 transition cursor-pointer"
+        className="fixed top-3 lg:top-6 right-8 text-black text-lg font-medium z-30 bg-white border border-gray-300 px-4 py-2 rounded-full shadow-lg hover:bg-zinc-100 transition cursor-pointer"
       >
         Menu +
       </button>
@@ -124,7 +124,7 @@ export default function CustomStaggeredMenu({
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="space-y-4 mt-12"
+                className="space-y-4 xl:space-y-2 2xl:space-y-4 mt-12"
               >
                 {items.map((item, i) => (
                   <motion.li
@@ -140,10 +140,10 @@ export default function CustomStaggeredMenu({
                         if (el) el.scrollIntoView({ behavior: "smooth" });
                         setIsOpen(false);
                       }}
-                      className="flex gap-2 text-2xl md:text-4xl font-bold text-gray-800 hover:text-blue-600 transition"
+                      className="flex gap-2 text-2xl xl:text-3xl 2xl:text-4xl tracking-tighter font-bold text-gray-800 hover:text-blue-600 transition"
                     >
                       <span>{item.label}</span>
-                      <span className="text-sm font-normal text-blue-600">
+                      <span className="text-sm font-semibold tracking-tight text-blue-600">
                         {item.number}
                       </span>
                     </a>

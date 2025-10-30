@@ -6,7 +6,6 @@ import {
   Filter,
   Truck,
 } from "lucide-react";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function GlowingEffectDemoSecond() {
   return (
@@ -52,7 +51,7 @@ interface GridItemProps {
 const GridItem = ({ imageUrl, icon, title, description }: GridItemProps) => {
   return (
     <li className="list-none">
-      <div className="relative flex justify-center items-center h-full p-6 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 group">
+      <div className="relative flex justify-center items-center h-full p-6 rounded-3xl overflow-hidden shadow-[8px_8px_30px_#bebebe,-8px_-8px_30px_#ffffff] transition-all duration-500 group">
 
         {/* Imagen de fondo */}
         <div
@@ -61,7 +60,7 @@ const GridItem = ({ imageUrl, icon, title, description }: GridItemProps) => {
         />
 
         {/* Overlay oscuro */}
-        <div className="absolute inset-0 bg-black/90 group-hover:bg-black/20 transition-colors duration-700 z-2" />
+        <div className="absolute inset-0 bg-zinc-200/90 group-hover:bg-black/20 transition-colors duration-700 z-2" />
 
         {/* Contenido principal */}
         <div
@@ -70,15 +69,15 @@ const GridItem = ({ imageUrl, icon, title, description }: GridItemProps) => {
           group-hover:opacity-0 group-hover:translate-y-5"
         >
           {/* Icono */}
-          <div className="w-fit mx-auto rounded-lg border border-blue-600 bg-cyan-400/10 p-2 mb-3 md:backdrop-blur-sm transition-all duration-300">
+          <div className="w-fit mx-auto rounded-lg bg-blue-800 p-2 mb-3 md:backdrop-blur-sm transition-all duration-300">
             {icon}
           </div>
 
           {/* Texto */}
-          <h3 className="text-xl font-semibold mb-2 text-cyan-300 drop-shadow-[0_0_10px_#00E0FF]">
+          <h3 className="text-xl font-semibold mb-2 text-blue-700">
             {title}
           </h3>
-          <p className="text-base leading-relaxed text-white">{description}</p>
+          <p className="text-base leading-relaxed text-black">{description}</p>
         </div>
       </div>
     </li>
