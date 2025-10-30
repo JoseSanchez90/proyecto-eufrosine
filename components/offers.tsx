@@ -13,8 +13,8 @@ export const offers = [
       "Agua purificada y embotellada al vacío",
       "Entrega gratuita en zonas cercanas"
     ],
-    image: <img src="/img/gift.png" alt="Gift" className="w-16 2xl:w-22" />,
-    gift: <SpinningText className="text-sm md:text-base 2xl:text-xl font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
+    image: <img src="/img/gift.png" alt="Gift" className="w-14 2xl:w-20" />,
+    gift: <SpinningText className="text-sm 2xl:text-lg font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
     note: "Promoción válida hasta agotar stock"
   },
   {
@@ -29,8 +29,8 @@ export const offers = [
       "Plástico reciclable y seguro",
       "Descuento exclusivo por compra directa"
     ],
-    image: <img src="/img/gift.png" alt="Gift" className="w-16 2xl:w-22" />,
-    gift: <SpinningText className="text-sm md:text-base 2xl:text-xl font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
+    image: <img src="/img/gift.png" alt="Gift" className="w-14 2xl:w-20" />,
+    gift: <SpinningText className="text-sm 2xl:text-lg font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
     note: "Promoción válida hasta agotar stock"
   },
   {
@@ -45,8 +45,8 @@ export const offers = [
       "Ideal para familias o negocios pequeños",
       "Entrega programada y recarga disponible"
     ],
-    image: <img src="/img/gift.png" alt="Gift" className="w-16 2xl:w-22" />,
-    gift: <SpinningText className="text-sm md:text-base 2xl:text-xl font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
+    image: <img src="/img/gift.png" alt="Gift" className="w-14 2xl:w-20" />,
+    gift: <SpinningText className="text-sm 2xl:text-lg font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
     note: "Promoción válida hasta agotar stock"
   }
 ];

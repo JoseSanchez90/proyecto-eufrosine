@@ -114,7 +114,7 @@ export default function Home() {
             Eufrosine te ofrece agua purificada de la más alta calidad, esencial
             para tu bienestar diario y salud integral.
           </p>
-          <button className="px-12 py-4 rounded-full bg-[#1F01B9] text-base font-semibold text-white transition-colors hover:bg-[#391FB6] border-2 cursor-pointer">
+          <button className="px-12 py-4 rounded-full bg-[#1F01B9] hover:bg-[#391FB6] text-base font-semibold text-white transition-colors cursor-pointer">
             Ver Ofertas
           </button>
         </div>
@@ -373,7 +373,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <div className="w-full flex justify-center mt-11 mb-6 2xl:mt-12 2xl:mb-6">
-                    <span className="relative md:left-8 md:top-10 2xl:left-11 2xl:top-12">
+                    <span className="relative md:left-7 md:top-8 2xl:left-10 2xl:top-12">
                       {offer.gift}
                     </span>
                     <span>{offer.image}</span>
@@ -381,7 +381,7 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="flex flex-col gap-2">
                   <p className="text-sm text-gray-500">{offer.note}</p>
-                  <button className="w-full py-2 2xl:py-3 rounded-full bg-[#1F01B9] text-base 2xl:text-lg font-semibold text-white transition-colors hover:bg-[#391FB6] border-2 border-gray-300 cursor-pointer">
+                  <button className="w-full py-2 2xl:py-3 rounded-full bg-[#1F01B9] text-base 2xl:text-lg font-semibold text-white transition-colors hover:bg-[#391FB6] cursor-pointer">
                     Solicitar ahora
                   </button>
                 </CardFooter>
@@ -427,7 +427,7 @@ export default function Home() {
                           ))}
                         </ul>
                         <div className="w-full flex justify-center pt-10 pb-2">
-                          <span className="relative left-8 top-9">
+                          <span className="relative left-7 top-8">
                             {offer.gift}
                           </span>
                           <span>{offer.image}</span>
@@ -435,7 +435,7 @@ export default function Home() {
                       </CardContent>
                       <CardFooter className="flex flex-col gap-2">
                         <p className="text-xs text-gray-500">{offer.note}</p>
-                        <button className="w-full px-12 py-3 rounded-full bg-[#1F01B9] text-base font-semibold text-white transition-colors hover:bg-[#391FB6] border-2 border-gray-300 cursor-pointer">
+                        <button className="w-full px-12 py-3 rounded-full bg-[#1F01B9] text-base font-semibold text-white transition-colors hover:bg-[#391FB6] cursor-pointer">
                           Solicitar ahora
                         </button>
                       </CardFooter>
@@ -446,7 +446,7 @@ export default function Home() {
             </div>
 
             {/* Puntos indicadores (solo móvil) */}
-            <div className="flex justify-center gap-2 mt-1">
+            <div className="flex justify-center gap-2 -mt-2">
               {offers.map((_, i) => (
                 <button
                   key={i}
