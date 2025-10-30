@@ -38,10 +38,10 @@ const menuItems = [
     link: "ofertas",
   },
   {
-    label: "PATROCINIOS",
+    label: "EVENTOS",
     number: "06",
     ariaLabel: "Conoce nuestros patrocinios y colaboraciones",
-    link: "patrocinios",
+    link: "eventos",
   },
   {
     label: "CONTÁCTANOS",

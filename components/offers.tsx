@@ -1,3 +1,5 @@
+import { SpinningText } from "./ui/spinning-text";
+
 export const offers = [
   {
     id: 1,
@@ -11,6 +13,8 @@ export const offers = [
       "Agua purificada y embotellada al vacío",
       "Entrega gratuita en zonas cercanas"
     ],
+    image: <img src="/img/gift.png" alt="Gift" className="w-16 md:w-24" />,
+    gift: <SpinningText className="text-sm lg:text-2xl font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
     note: "Promoción válida hasta agotar stock"
   },
   {
@@ -25,6 +29,8 @@ export const offers = [
       "Plástico reciclable y seguro",
       "Descuento exclusivo por compra directa"
     ],
+    image: <img src="/img/gift.png" alt="Gift" className="w-16 md:w-24" />,
+    gift: <SpinningText className="text-sm lg:text-2xl font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
     note: "Promoción válida hasta agotar stock"
   },
   {
@@ -39,6 +45,8 @@ export const offers = [
       "Ideal para familias o negocios pequeños",
       "Entrega programada y recarga disponible"
     ],
+    image: <img src="/img/gift.png" alt="Gift" className="w-16 md:w-24" />,
+    gift: <SpinningText className="text-sm lg:text-2xl font-semibold" radius={7}>Haz tu pedido y recibe un regalo gratis •</SpinningText>,
     note: "Promoción válida hasta agotar stock"
   }
 ];
