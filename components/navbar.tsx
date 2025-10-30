@@ -47,7 +47,7 @@ const menuItems = [
     label: "CONTÁCTANOS",
     number: "07",
     ariaLabel: "Ir a la sección de contacto",
-    link: "contacto",
+    link: "contactanos",
   },
 ];
 

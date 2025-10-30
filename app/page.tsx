@@ -5,7 +5,7 @@ import { pacifico } from "@/lib/fonts";
 import { Products } from "@/components/products";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { BadgeCheckIcon, CheckCircle } from "lucide-react";
+import { BadgeCheckIcon, CheckCircle, Mail, MapPin } from "lucide-react";
 import { GlowingEffectDemoSecond } from "@/components/process";
 import {
   Card,
@@ -19,6 +19,7 @@ import { offers } from "@/components/offers";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { FaHashtag } from "react-icons/fa";
+import { Label } from "@/components/ui/label";
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -124,9 +125,7 @@ export default function Home() {
       <section id="nosotros" className="bg-white">
         <div className="relative max-w-sm sm:max-w-5xl 2xl:max-w-7xl mx-auto pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-40 2xl:pb-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-14 sm:gap-24 2xl:gap-38">
-            <div
-              className="flex flex-col text-start"
-            >
+            <div className="flex flex-col text-start">
               <h2
                 className={clsx(
                   "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-[#1F01B9] mb-3 2xl:mb-5",
@@ -178,9 +177,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div
-              className="grid grid-rows-3 gap-10 xl:gap-7 2xl:gap-14"
-            >
+            <div className="grid grid-rows-3 gap-10 xl:gap-7 2xl:gap-14">
               {Valores.map((valores, i) => (
                 <div
                   key={i}
@@ -345,7 +342,7 @@ export default function Home() {
             {offers.map((offer) => (
               <Card
                 key={offer.id}
-                className="flex flex-col md:w- md:h-130 2xl:w-90 2xl:h-150 justify-between rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
+                className="flex flex-col md:h-130 2xl:w-90 2xl:h-150 justify-between rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
               >
                 <CardHeader>
                   <CardTitle className="text-lg 2xl:text-xl font-bold text-center">
@@ -612,6 +609,169 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contactanos" className="bg-white">
+        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
+          <div className="flex flex-col items-center justify-center text-center px-2 mb-12">
+            <h2
+              className={clsx(
+                "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-[#1F01B9] mb-3 2xl:mb-5",
+                pacifico.className
+              )}
+            >
+              Contáctanos
+            </h2>
+            <p className="text-base xl:text-lg 2xl:text-2xl text-gray-700">
+              ¿Tienes alguna pregunta sobre nuestros productos?
+              <br />
+              Estamos aquí para ayudarte.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-16 px-2">
+            {/* Columna izquierda - Información de contacto */}
+            <div className="flex flex-col">
+              {/* Información de contacto */}
+              <div className="w-full justify-center mb-6 md:mt-4 md:mb-4">
+                <img
+                  src="/img/Logo-Eufrosine-transparent.png"
+                  alt="Logo"
+                  className="w-60 object-cover mx-auto"
+                />
+              </div>
+              
+              <div className="p-2 md:p-6 flex flex-col space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-700 p-3 rounded-full shrink-0">
+                    <Mail size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="font-medium mb-1 text-gray-900">Email</p>
+                    <p className="text-neutral-600 text-sm md:text-base">
+                      aguademesaeufrosineperu@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-700 p-3 rounded-full shrink-0">
+                    <MapPin size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="font-medium mb-1 text-gray-900">Ubicación</p>
+                    <p className="text-neutral-600 text-sm md:text-base">Hualmay, Huacho, Lima</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Horario de atención */}
+              <div className="p-6 bg-white transition-all">
+                <h3 className="font-semibold mb-4 text-[#1F01B9] text-lg">
+                  Horario de atención
+                </h3>
+                <div className="space-y-3 text-sm sm:text-base flex flex-col justify-around">
+                  <div className="flex justify-between text-neutral-600">
+                    <span>Lunes - Viernes</span>
+                    <span className="font-medium text-gray-900">
+                      9:00 AM - 6:00 PM
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-neutral-600">
+                    <span>Sábados</span>
+                    <span className="font-medium text-gray-900">
+                      10:00 AM - 2:00 PM
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-neutral-600">
+                    <span>Domingos</span>
+                    <span className="font-medium text-gray-900">Cerrado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Columna derecha - Formulario */}
+            <Card className="bg-white rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] p-2 md:p-6 border-0">
+              <CardHeader>
+                <CardTitle>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div>
+                    <Label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2 text-gray-900"
+                    >
+                      Nombre
+                    </Label>
+                    <input
+                      id="name"
+                      type="text"
+                      className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
+                      placeholder="Tu nombre completo"
+                    />
+                  </div>
+
+                  <div>
+                    <Label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2 text-gray-900"
+                    >
+                      Email
+                    </Label>
+                    <input
+                      id="email"
+                      type="email"
+                      className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+
+                  <div>
+                    <Label
+                      htmlFor="phone"
+                      className="block text-sm font-medium mb-2 text-gray-900"
+                    >
+                      Teléfono
+                    </Label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
+                      placeholder="+51 999 999 999"
+                    />
+                  </div>
+
+                  <div>
+                    <Label
+                      htmlFor="message"
+                      className="block text-sm font-medium mb-2 text-gray-900"
+                    >
+                      Mensaje
+                    </Label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      className="w-full text-sm px-4 py-3 rounded-3xl border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                      placeholder="Cuéntanos cómo podemos ayudarte..."
+                    />
+                  </div>
+                </div>
+
+                <button className="w-full bg-[#1F01B9] hover:bg-[#391FB6] text-white py-3 rounded-full text-base font-semibold transition-colors cursor-pointer">
+                  Enviar mensaje
+                </button>
+
+                <p className="text-xs text-center text-neutral-500">
+                  Al enviar este formulario, aceptas nuestra política de
+                  privacidad
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
