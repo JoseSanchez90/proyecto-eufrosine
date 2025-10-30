@@ -651,7 +651,7 @@ export default function Home() {
       </section>
 
       <section id="contactanos" className="bg-white">
-        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
+        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-20 xl:pt-10 xl:pb-20 2xl:pt-20 2xl:pb-40">
           <div className="flex flex-col items-center justify-center text-center px-2 mb-12">
             <h2
               className={clsx(
