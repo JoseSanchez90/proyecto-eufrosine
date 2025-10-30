@@ -5,7 +5,7 @@ import { pacifico } from "@/lib/fonts";
 import { Products } from "@/components/products";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { BadgeCheckIcon, CheckCircle, Mail, MapPin } from "lucide-react";
+import { BadgeCheckIcon, CheckCircle, Mail, MapPin, Phone } from "lucide-react";
 import { GlowingEffectDemoSecond } from "@/components/process";
 import {
   Card,
@@ -18,13 +18,16 @@ import {
 import { offers } from "@/components/offers";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import { FaHashtag } from "react-icons/fa";
+import { FaFacebook, FaHashtag, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Label } from "@/components/ui/label";
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const Valores = [
     {
       Icon: (
@@ -63,6 +66,40 @@ export default function Home() {
         "Integridad, compromiso con la calidad, responsabilidad ambiental y servicio excepcional al cliente.",
     },
   ];
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error("Error sending message");
+
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
+  };
 
   const scrollTo = useCallback(
     (index: number) => {
@@ -642,7 +679,7 @@ export default function Home() {
                   className="w-60 object-cover mx-auto"
                 />
               </div>
-              
+
               <div className="p-2 md:p-6 flex flex-col space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-700 p-3 rounded-full shrink-0">
@@ -662,7 +699,9 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-medium mb-1 text-gray-900">Ubicación</p>
-                    <p className="text-neutral-600 text-sm md:text-base">Hualmay, Huacho, Lima</p>
+                    <p className="text-neutral-600 text-sm md:text-base">
+                      Hualmay, Huacho, Lima
+                    </p>
                   </div>
                 </div>
               </div>
@@ -696,84 +735,262 @@ export default function Home() {
             {/* Columna derecha - Formulario */}
             <Card className="bg-white rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] p-2 md:p-6 border-0">
               <CardHeader>
-                <CardTitle>
-                </CardTitle>
+                <CardTitle></CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <div>
-                    <Label
-                      htmlFor="name"
-                      className="block text-sm font-medium mb-2 text-gray-900"
-                    >
-                      Nombre
-                    </Label>
-                    <input
-                      id="name"
-                      type="text"
-                      className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="Tu nombre completo"
-                    />
+                <form onSubmit={handleSubmit}>
+                  <div className="space-y-4 mb-3">
+                    <div>
+                      <Label
+                        htmlFor="name"
+                        className="block text-sm font-medium mb-2 text-gray-900"
+                      >
+                        Nombre *
+                      </Label>
+                      <input
+                        id="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        type="text"
+                        className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
+                        placeholder="Tu nombre completo"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <Label
+                        htmlFor="email"
+                        className="block text-sm font-medium mb-2 text-gray-900"
+                      >
+                        Email *
+                      </Label>
+                      <input
+                        id="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        type="email"
+                        className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
+                        placeholder="tu@email.com"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <Label
+                        htmlFor="phone"
+                        className="block text-sm font-medium mb-2 text-gray-900"
+                      >
+                        Teléfono (Opcional)
+                      </Label>
+                      <input
+                        id="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        type="tel"
+                        className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
+                        placeholder="+51 999 999 999"
+                      />
+                    </div>
+
+                    <div>
+                      <Label
+                        htmlFor="message"
+                        className="block text-sm font-medium mb-2 text-gray-900"
+                      >
+                        Mensaje *
+                      </Label>
+                      <textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full text-sm px-4 py-3 rounded-3xl border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                        placeholder="Cuéntanos cómo podemos ayudarte..."
+                        required
+                      />
+                    </div>
                   </div>
 
-                  <div>
-                    <Label
-                      htmlFor="email"
-                      className="block text-sm font-medium mb-2 text-gray-900"
-                    >
-                      Email
-                    </Label>
-                    <input
-                      id="email"
-                      type="email"
-                      className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="tu@email.com"
-                    />
-                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-[#1F01B9] hover:bg-[#391FB6] text-white py-3 rounded-full text-base font-semibold transition-colors cursor-pointer"
+                    disabled={status === "loading"}
+                  >
+                    {status === "loading" ? "Enviando..." : "Enviar"}
+                  </button>
+                  {status === "success" && (
+                    <p className="text-green-500">
+                      Mensaje enviado satisfactoriamente!
+                    </p>
+                  )}
+                  {status === "error" && (
+                    <p className="text-red-500">Error al enviar mensaje.</p>
+                  )}
 
-                  <div>
-                    <Label
-                      htmlFor="phone"
-                      className="block text-sm font-medium mb-2 text-gray-900"
-                    >
-                      Teléfono
-                    </Label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
-                      placeholder="+51 999 999 999"
-                    />
-                  </div>
-
-                  <div>
-                    <Label
-                      htmlFor="message"
-                      className="block text-sm font-medium mb-2 text-gray-900"
-                    >
-                      Mensaje
-                    </Label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full text-sm px-4 py-3 rounded-3xl border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-                      placeholder="Cuéntanos cómo podemos ayudarte..."
-                    />
-                  </div>
-                </div>
-
-                <button className="w-full bg-[#1F01B9] hover:bg-[#391FB6] text-white py-3 rounded-full text-base font-semibold transition-colors cursor-pointer">
-                  Enviar mensaje
-                </button>
-
-                <p className="text-xs text-center text-neutral-500">
-                  Al enviar este formulario, aceptas nuestra política de
-                  privacidad
-                </p>
+                  <p className="text-xs text-center text-neutral-500 my-3">
+                    Al enviar este formulario, aceptas nuestra política de
+                    privacidad
+                  </p>
+                </form>
               </CardContent>
             </Card>
           </div>
         </div>
+      </section>
+
+      <section className="bg-white">
+        <footer className="bg-[#1F01B9] py-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 md:justify-items-center">
+              {/* Marca */}
+              <div className="grid grid-cols-2 md:flex md:flex-col justify-center items-center md:items-start">
+                <div className="col-span-1">
+                  <h3
+                    className={clsx(
+                      "text-4xl text-white mb-4",
+                      pacifico.className
+                    )}
+                  >
+                    eufrosine
+                  </h3>
+                  <p className="text-gray-200">
+                    Agua de mesa de alta calidad para una vida saludable
+                  </p>
+                </div>
+                <div className="col-span-1 pt-4">
+                  <img src="/img/Logo-Eufrosine-white.png" alt="Logo" className="w-full md:w-35 object-cover" />
+                </div>
+              </div>
+
+              {/* Enlaces Rapidos */}
+              <div>
+                <h4 className="text-white font-semibold mb-4">
+                  Enlaces Rápidos
+                </h4>
+                <ul className="space-y-2 text-gray-200">
+                  <li>
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("inicio")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Inicio
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("nosotros")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Nosotros
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("productos")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Productos
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("proceso")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Proceso
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("ofertas")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Ofertas
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("contacto")
+                          ?.scrollIntoView({ behavior: "smooth" })
+                      }
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Contacto
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Contacto */}
+              <div>
+                <h4 className="text-white font-semibold mb-4">Contacto</h4>
+                <ul className="flex flex-col space-y-2 text-gray-200">
+                  <li className="flex items-center gap-4">
+                    <Phone className="w-4 h-4" /> +51 999 888 777
+                  </li>
+                  <li className="flex items-center gap-4">
+                    <Mail className="w-4 h-4" /> contacto@eufrosine.com
+                  </li>
+                  <li className="flex items-center gap-4">
+                    <MapPin className="w-4 h-4" /> Av. Principal 1234, Lima
+                  </li>
+                </ul>
+              </div>
+
+              {/* Social */}
+              <div>
+                <h4 className="text-white font-semibold mb-4">Síguenos</h4>
+                <div className="flex gap-6">
+                  <a href="#" className="cursor-pointer">
+                    <FaWhatsapp
+                      size={30}
+                      className="text-white hover:text-green-600 transition-all duration-200"
+                    />
+                  </a>
+                  <a href="#" className="cursor-pointer">
+                    <FaFacebook
+                      size={30}
+                      className="text-white hover:text-blue-500 transition-all duration-200"
+                    />
+                  </a>
+                  <a href="#" className="cursor-pointer">
+                    <FaInstagram
+                      size={30}
+                      className="text-white hover:text-orange-600 transition-all duration-200"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-white pt-4 text-center text-gray-200">
+              <p className="text-sm">© 2024 Eufrosine. Todos los derechos reservados.</p>
+            </div>
+          </div>
+        </footer>
       </section>
     </main>
   );
