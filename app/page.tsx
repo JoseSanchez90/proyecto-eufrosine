@@ -124,10 +124,7 @@ export default function Home() {
       <section id="nosotros" className="bg-white">
         <div className="relative max-w-sm sm:max-w-5xl 2xl:max-w-7xl mx-auto pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-40 2xl:pb-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-14 sm:gap-24 2xl:gap-38">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+            <div
               className="flex flex-col text-start"
             >
               <h2
@@ -179,12 +176,9 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+            <div
               className="grid grid-rows-3 gap-10 xl:gap-7 2xl:gap-14"
             >
               {Valores.map((valores, i) => (
@@ -203,7 +197,7 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -406,7 +400,7 @@ export default function Home() {
                     key={offer.id}
                     className="flex-[0_0_80%] min-w-0 pl-5 pr-5" // Reducido a 80% y más padding
                   >
-                    <Card className="h-140 flex flex-col justify-between rounded-[40px] shadow-[8px_8px_20px_#bebebe,-8px_-8px_20px_#ffffff] md:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] w-full">
+                    <Card className="h-140 flex flex-col justify-between rounded-[40px] shadow-[8px_8px_20px_#bebebe,-8px_-8px_20px_#ffffff] md:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] w-full will-change-transform">
                       <CardHeader>
                         <CardTitle className="text-xl font-bold text-center">
                           {offer.title}
@@ -469,8 +463,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECCION EVENTOS */}
       <section id="eventos" className="bg-white">
-        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-40 2xl:pb-20">
+        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
           <div className="flex flex-col items-center justify-center text-center px-6">
             <h2
               className={clsx(
@@ -531,7 +526,7 @@ export default function Home() {
             </div>
 
             {/* EVENTO 2 */}
-            <div className="group h-fit md:h-70 2xl:h-80 flex flex-col md:flex-row items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
+            <div className="group h-fit md:h-70 2xl:h-80 flex flex-col md:flex-row-reverse items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
               {/* Imagen con efecto de zoom */}
               <div className="overflow-hidden w-full md:w-3/7 rounded-[40px]">
                 <div className="transition-transform duration-700 ease-out lg:group-hover:scale-135">
