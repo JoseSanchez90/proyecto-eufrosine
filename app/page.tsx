@@ -262,7 +262,7 @@ export default function Home() {
 
       {/* SECCIÓN PROCESO */}
       <section id="proceso" className="bg-white">
-        <div className="min-h-screen w-full mx-auto pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-40 2xl:pb-20">
+        <div className="min-h-screen w-full mx-auto pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-28 2xl:pb-20">
           <div className="z-10 flex flex-col items-center justify-center text-center px-6">
             <h2
               className={clsx(
@@ -331,7 +331,7 @@ export default function Home() {
 
       {/* SECCION DE OFERTAS ESPECIALES */}
       <section id="ofertas" className="bg-white">
-        <div className="min-h-screen w-full mx-auto pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-26 2xl:pb-20">
+        <div className="min-h-screen w-full mx-auto pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
           <div className="flex flex-col items-center justify-center text-center px-6">
             <h2
               className={clsx(
@@ -351,43 +351,43 @@ export default function Home() {
             {offers.map((offer) => (
               <Card
                 key={offer.id}
-                className="flex flex-col w-120 h-190 justify-between rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
+                className="flex flex-col md:w- md:h-130 2xl:w-90 2xl:h-150 justify-between rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
               >
                 <CardHeader>
-                  <CardTitle className="text-xl 2xl:text-3xl font-bold text-center">
+                  <CardTitle className="text-lg 2xl:text-xl font-bold text-center">
                     {offer.title}
                   </CardTitle>
-                  <CardDescription className="text-center text-lg 2xl:text-xl">
+                  <CardDescription className="text-center text-sm 2xl:text-base">
                     {offer.subtitle}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl 2xl:text-4xl text-center font-bold text-blue-600 mb-2">
+                  <div className="text-2xl 2xl:text-3xl text-center font-bold text-blue-600 mb-2">
                     {offer.price}
                   </div>
-                  <p className="text-base 2xl:text-lg text-green-600 text-center font-medium mb-3">
+                  <p className="text-sm text-green-600 text-center font-medium mb-4">
                     {offer.highlight}
                   </p>
-                  <ul className="space-y-4 text-lg 2xl:text-xl">
+                  <ul className="space-y-1 2xl:space-y-2 text-sm">
                     {offer.details.map((detail, i) => (
-                      <li key={i} className="flex items-start">
+                      <li key={i} className="flex items-start sm:items-center">
                         <span className="mr-2">
-                          <CheckCircle className="w-6 h-6 text-blue-600" />
+                          <CheckCircle className="w-4 h-4 text-blue-600" />
                         </span>{" "}
                         {detail}
                       </li>
                     ))}
                   </ul>
-                  <div className="w-full flex justify-center mt-20 mb-14">
-                    <span className="relative left-12 top-15">
+                  <div className="w-full flex justify-center mt-11 mb-6 2xl:mt-12 2xl:mb-6">
+                    <span className="relative md:left-8 md:top-10 2xl:left-11 2xl:top-12">
                       {offer.gift}
                     </span>
                     <span>{offer.image}</span>
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-2">
-                  <p className="text-base text-gray-500">{offer.note}</p>
-                  <button className="w-full py-3 2xl:py-4 rounded-full bg-[#1F01B9] text-base 2xl:text-lg font-semibold text-white transition-colors hover:bg-[#391FB6] border-2 border-gray-300 cursor-pointer">
+                  <p className="text-sm text-gray-500">{offer.note}</p>
+                  <button className="w-full py-2 2xl:py-3 rounded-full bg-[#1F01B9] text-base 2xl:text-lg font-semibold text-white transition-colors hover:bg-[#391FB6] border-2 border-gray-300 cursor-pointer">
                     Solicitar ahora
                   </button>
                 </CardFooter>
@@ -422,23 +422,21 @@ export default function Home() {
                         <p className="text-sm text-green-600 text-center font-medium mb-3">
                           {offer.highlight}
                         </p>
-                        <ul className="space-y-1 text-sm">
+                        <ul className="text-sm">
                           {offer.details.map((detail, i) => (
                             <li key={i} className="flex items-start">
-                              <span className="mr-2">
-                                <CheckCircle className="w-4 h-4 text-blue-600" />
+                              <span className="mr-2 mt-1">
+                                <CheckCircle className="w-3 h-3 text-blue-600" />
                               </span>{" "}
                               {detail}
                             </li>
                           ))}
                         </ul>
-                        <div className="w-full flex justify-center pt-8 pb-4">
+                        <div className="w-full flex justify-center pt-10 pb-2">
                           <span className="relative left-8 top-9">
                             {offer.gift}
                           </span>
-                          <span>
-                            {offer.image}
-                          </span>
+                          <span>{offer.image}</span>
                         </div>
                       </CardContent>
                       <CardFooter className="flex flex-col gap-2">
@@ -486,11 +484,11 @@ export default function Home() {
               Aprovecha nuestras promociones y ahorra en tus compras
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:gap-12 mt-8 2xl:mt-12">
+          <div className="grid grid-cols-1 gap-8 sm:gap-12 mt-8 2xl:mt-12 px-4 md:px-0">
             {/* EVENTO 1 */}
-            <div className="group h-80 flex items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
+            <div className="group h-fit md:h-70 2xl:h-80 flex flex-col md:flex-row items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
               {/* Imagen con efecto de zoom */}
-              <div className="overflow-hidden w-1/2 rounded-[40px]">
+              <div className="overflow-hidden w-full md:w-3/7 rounded-[40px]">
                 <div className="transition-transform duration-700 ease-out lg:group-hover:scale-135">
                   <img
                     src="/img/evento-1.jpg"
@@ -501,38 +499,41 @@ export default function Home() {
               </div>
 
               {/* Texto */}
-              <div className="p-4 2xl:p-8 text-start space-y-2 sm:space-y-4 w-1/2">
-                <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
-                  Campeonato Interno de Exalumnos – UNJFSC
-                </h3>
-                <p className="text-gray-700 text-sm sm:text-lg mb-4">
-                  La marca Eufrosine estuvo presente en el Campeonato Interno de
-                  Exalumnos de la Universidad Nacional José Faustino Sánchez
-                  Carrión, apoyando la unión, la energía y la hidratación de
-                  cada participante. Un evento lleno de compañerismo y deporte
-                  donde el agua de calidad acompañó cada momento.
-                </p>
-                <div className="flex items-start gap-4">
-                  <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
+              <div className="p-4 md:p-6 2xl:px-8 2xl:py-6 text-start w-full md:w-3/5 h-full flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
+                    Campeonato Interno de Exalumnos – UNJFSC
+                  </h3>
+                  <p className="text-gray-700 text-base 2xl:text-lg mb-4">
+                    La marca Eufrosine estuvo presente en el Campeonato Interno
+                    de Exalumnos de la Universidad Nacional José Faustino
+                    Sánchez Carrión, apoyando la unión, la energía y la
+                    hidratación de cada participante. Un evento lleno de
+                    compañerismo y deporte donde el agua de calidad acompañó
+                    cada momento.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2 md:gap-4">
+                  <Badge className="py-1 px-2 bg-blue-500 text-white text-xs md:text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
                     Universidad
                   </Badge>
-                  <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
+                  <Badge className="py-1 px-2 bg-blue-500 text-white text-xs md:text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
                     ExAlumnos
                   </Badge>
-                  <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
+                  <Badge className="py-1 px-2 bg-blue-500 text-white text-xs md:text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
-                    EufrosinePresente
+                    Eufrosine
                   </Badge>
                 </div>
               </div>
             </div>
 
             {/* EVENTO 2 */}
-            <div className="group h-80 flex flex-row-reverse items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
+            <div className="group h-fit md:h-70 2xl:h-80 flex flex-col md:flex-row items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
               {/* Imagen con efecto de zoom */}
-              <div className="overflow-hidden w-1/2 rounded-[40px]">
+              <div className="overflow-hidden w-full md:w-3/7 rounded-[40px]">
                 <div className="transition-transform duration-700 ease-out lg:group-hover:scale-135">
                   <img
                     src="/img/evento-2.jpg"
@@ -543,18 +544,20 @@ export default function Home() {
               </div>
 
               {/* Texto */}
-              <div className="p-4 2xl:p-8 text-start space-y-2 2xl:space-y-4 w-1/2">
-                <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
-                  Campeonato Relámpago de Fútbol
-                </h3>
-                <p className="text-gray-700 text-sm sm:text-lg mb-4">
-                  En un emocionante campeonato relámpago, los equipos
-                  demostraron su talento, esfuerzo y trabajo en equipo bajo el
-                  sol. Eufrosine acompañó a los jugadores brindando hidratación
-                  pura y frescura durante todo el torneo, promoviendo el deporte
-                  y el bienestar físico.
-                </p>
-                <div className="flex gap-4">
+              <div className="p-4 md:p-6 2xl:px-8 2xl:py-6 text-start w-full md:w-3/5 h-full flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
+                    Campeonato Relámpago de Fútbol
+                  </h3>
+                  <p className="text-gray-700 text-base 2xl:text-lg mb-4">
+                    En un emocionante campeonato relámpago, los equipos
+                    demostraron su talento, esfuerzo y trabajo en equipo bajo el
+                    sol. Eufrosine acompañó a los jugadores brindando
+                    hidratación pura y frescura durante todo el torneo,
+                    promoviendo el deporte y el bienestar físico.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2 md:gap-4">
                   <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
                     Fútbol
@@ -565,16 +568,16 @@ export default function Home() {
                   </Badge>
                   <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
-                    HidrataciónActiva
+                    Hidratación
                   </Badge>
                 </div>
               </div>
             </div>
 
             {/* EVENTO 3 */}
-            <div className="group h-80 flex items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
+            <div className="group h-fit md:h-70 2xl:h-80 flex flex-col md:flex-row items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
               {/* 🖼️ Imagen con efecto de zoom */}
-              <div className="overflow-hidden w-1/2 rounded-[40px]">
+              <div className="overflow-hidden w-full md:w-3/7 rounded-[40px]">
                 <div className="transition-transform duration-700 ease-out lg:group-hover:scale-135">
                   <img
                     src="/img/evento-3.jpg"
@@ -585,18 +588,20 @@ export default function Home() {
               </div>
 
               {/* 📄 Texto */}
-              <div className="p-4 text-start space-y-2 sm:space-y-4 w-1/2">
-                <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
-                  Campeonato de Vóley
-                </h3>
-                <p className="text-gray-700 text-sm sm:text-lg mb-4">
-                  Las jugadoras y jugadores vivieron una jornada intensa de
-                  competencia y diversión en el campeonato de vóley, donde
-                  Eufrosine fue parte fundamental al mantenerlos frescos e
-                  hidratados. Una experiencia que refuerza nuestro compromiso
-                  con el deporte y la vida saludable.
-                </p>
-                <div className="flex gap-4">
+              <div className="p-4 md:p-6 2xl:px-8 2xl:py-6 text-start w-full md:w-3/5 h-full flex flex-col justify-between gap-4">
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
+                    Campeonato de Vóley
+                  </h3>
+                  <p className="text-gray-700 text-base 2xl:text-lg mb-4">
+                    Las jugadoras y jugadores vivieron una jornada intensa de
+                    competencia y diversión en el campeonato de vóley, donde
+                    Eufrosine fue parte fundamental al mantenerlos frescos e
+                    hidratados. Una experiencia que refuerza nuestro compromiso
+                    con el deporte y la vida saludable.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2 md:gap-4">
                   <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
                     Vóley
@@ -607,7 +612,7 @@ export default function Home() {
                   </Badge>
                   <Badge className="py-1 px-2 bg-blue-500 text-white text-sm dark:bg-blue-600">
                     <FaHashtag className="w-8 h-8" />
-                    EnergíaEufrosine
+                    Energía
                   </Badge>
                 </div>
               </div>
