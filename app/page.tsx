@@ -965,7 +965,7 @@ export default function Home() {
                       }
                       className="hover:text-blue-400 transition-colors"
                     >
-                      Productos
+                      Presentaciones
                     </button>
                   </li>
                   <li>
