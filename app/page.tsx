@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { pacifico } from "@/lib/fonts";
 import { Products } from "@/components/products";
 import clsx from "clsx";
-import { motion } from "framer-motion";
 import { BadgeCheckIcon, CheckCircle, Mail, MapPin, Phone } from "lucide-react";
 import { GlowingEffectDemoSecond } from "@/components/process";
 import {
@@ -20,11 +19,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { FaFacebook, FaHashtag, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Label } from "@/components/ui/label";
+import { formatPrice } from "@/components/utils/formatters";
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const phone = "51903565918";
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
@@ -125,6 +126,19 @@ export default function Home() {
     };
   }, [emblaApi, onSelect]);
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Función reutilizable para generar el enlace de WhatsApp
+  const getWhatsAppUrl = (message: string) =>
+    `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
+      message
+    )}`;
+
   return (
     <main className="relative w-full h-full">
       {/* SECCIÓN INICIO */}
@@ -152,9 +166,23 @@ export default function Home() {
             Eufrosine te ofrece agua purificada de la más alta calidad, esencial
             para tu bienestar diario y salud integral.
           </p>
-          <button className="px-12 py-4 rounded-full bg-[#1F01B9] hover:bg-[#391FB6] text-base font-semibold text-white transition-colors cursor-pointer">
-            Ver Ofertas
-          </button>
+          <div className="flex gap-6 md:gap-8 mt-4">
+            <button
+              onClick={() => scrollToSection("ofertas")}
+              className="px-8 md:px-12 py-4 rounded-full bg-[#1F01B9] hover:bg-[#391FB6] text-base font-semibold text-white transition-colors cursor-pointer"
+            >
+              Ver Ofertas
+            </button>
+            <a
+              href="https://api.whatsapp.com/send?phone=51903565918"
+              target="_blank"
+              rel="noopener"
+            >
+              <button className="px-8 md:px-12 py-4 rounded-full bg-white hover:bg-zinc-200 text-base font-semibold text-black transition-colors cursor-pointer">
+                Escribenos
+              </button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -259,28 +287,35 @@ export default function Home() {
                 key={i}
                 className="group h-auto flex items-center text-center rounded-[40px] bg-white overflow-hidden shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
               >
-                {/* 🖼️ Imagen con efecto de zoom */}
+                {/* Imagen con efecto de zoom */}
                 <div className="overflow-hidden w-1/2 rounded-[40px]">
                   <div className="transition-transform duration-700 ease-out lg:group-hover:scale-135">
                     {product.image}
                   </div>
                 </div>
 
-                {/* 📄 Texto */}
-                <div className="p-4 text-start space-y-2 sm:space-y-4 w-1/2">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-[#1F01B9]">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-700 text-sm sm:text-base mb-4">
-                    {product.description}
-                  </p>
-                  <Badge
-                    variant="secondary"
-                    className="bg-blue-500 text-white dark:bg-blue-600"
-                  >
-                    <BadgeCheckIcon />
-                    {product.amount}
-                  </Badge>
+                {/* Texto */}
+                <div className="p-4 w-1/2 h-full flex flex-col justify-between">
+                  <div className="flex flex-col items-start gap-2">
+                    <h3 className="text-lg sm:text-2xl text-start font-semibold text-[#1F01B9]">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-700 text-start text-sm sm:text-base mb-4">
+                      {product.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-start gap-4">
+                    <p className="text-xl font-bold text-blue-600">
+                      {formatPrice(product.price)}
+                    </p>
+                    <Badge
+                      variant="secondary"
+                      className="bg-blue-500 text-white dark:bg-blue-600"
+                    >
+                      <BadgeCheckIcon />
+                      {product.amount}
+                    </Badge>
+                  </div>
                 </div>
               </div>
             ))}
@@ -373,13 +408,12 @@ export default function Home() {
               Aprovecha nuestras promociones y ahorra en tus compras
             </p>
           </div>
-
-          {/* Versión Desktop - Layout original */}
+          {/* 🌐 Versión Desktop */}
           <div className="hidden md:flex justify-center items-center gap-12 p-4 mt-8 xl:mt-4 2xl:mt-10">
             {offers.map((offer) => (
               <Card
                 key={offer.id}
-                className="flex flex-col md:h-130 2xl:w-90 2xl:h-150 justify-between rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
+                className="flex flex-col h-full justify-between rounded-[40px] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
               >
                 <CardHeader>
                   <CardTitle className="text-lg 2xl:text-xl font-bold text-center">
@@ -389,35 +423,48 @@ export default function Home() {
                     {offer.subtitle}
                   </CardDescription>
                 </CardHeader>
+
                 <CardContent>
-                  <div className="text-2xl 2xl:text-3xl text-center font-bold text-blue-600 mb-2">
+                  <p className="text-2xl 2xl:text-3xl text-center font-bold text-blue-600 mb-2">
                     {offer.price}
-                  </div>
+                  </p>
                   <p className="text-sm text-green-600 text-center font-medium mb-4">
                     {offer.highlight}
                   </p>
+
                   <ul className="space-y-1 2xl:space-y-2 text-sm">
                     {offer.details.map((detail, i) => (
                       <li key={i} className="flex items-start sm:items-center">
                         <span className="mr-2">
                           <CheckCircle className="w-4 h-4 text-blue-600" />
-                        </span>{" "}
+                        </span>
                         {detail}
                       </li>
                     ))}
                   </ul>
-                  <div className="w-full flex justify-center mt-11 mb-6 2xl:mt-12 2xl:mb-6">
+                </CardContent>
+
+                <CardFooter className="flex flex-col gap-2">
+                  <div className="w-full flex justify-center md:pt-6 md:pb-10 2xl:pt-8 2xl:pb-12">
                     <span className="relative md:left-7 md:top-8 2xl:left-10 2xl:top-12">
                       {offer.gift}
                     </span>
                     <span>{offer.image}</span>
                   </div>
-                </CardContent>
-                <CardFooter className="flex flex-col gap-2">
                   <p className="text-sm text-gray-500">{offer.note}</p>
-                  <button className="w-full py-2 2xl:py-3 rounded-full bg-[#1F01B9] text-base 2xl:text-lg font-semibold text-white transition-colors hover:bg-[#391FB6] cursor-pointer">
-                    Solicitar ahora
-                  </button>
+
+                  <a
+                    href={getWhatsAppUrl(offer.whatsappMessage)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Chatea sobre ${offer.title} por WhatsApp`}
+                    aria-label={`Abrir chat de WhatsApp para ${offer.title}`}
+                    className="w-full"
+                  >
+                    <button className="w-full py-2 2xl:py-3 rounded-full bg-[#1F01B9] text-base 2xl:text-lg font-semibold text-white transition-colors hover:bg-[#391FB6] cursor-pointer">
+                      Solicitar ahora
+                    </button>
+                  </a>
                 </CardFooter>
               </Card>
             ))}
@@ -426,15 +473,13 @@ export default function Home() {
           {/* Versión Mobile - Carousel */}
           <div className="block md:hidden relative">
             <div className="overflow-hidden py-8" ref={emblaRef}>
-              {" "}
-              {/* Agregado py-4 para espacio vertical */}
               <div className="flex">
                 {offers.map((offer) => (
                   <div
                     key={offer.id}
-                    className="flex-[0_0_80%] min-w-0 pl-5 pr-5" // Reducido a 80% y más padding
+                    className="flex-[0_0_80%] min-w-0 pl-5 pr-5"
                   >
-                    <Card className="h-140 flex flex-col justify-between rounded-[40px] shadow-[8px_8px_20px_#bebebe,-8px_-8px_20px_#ffffff] md:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] w-full will-change-transform">
+                    <Card className="h-full flex flex-col justify-between rounded-[40px] shadow-[8px_8px_20px_#bebebe,-8px_-8px_20px_#ffffff] w-full will-change-transform">
                       <CardHeader>
                         <CardTitle className="text-xl font-bold text-center">
                           {offer.title}
@@ -443,10 +488,11 @@ export default function Home() {
                           {offer.subtitle}
                         </CardDescription>
                       </CardHeader>
+
                       <CardContent>
-                        <div className="text-3xl text-center font-bold text-blue-600 mb-2">
+                        <p className="text-3xl text-center font-bold text-blue-600 mb-2">
                           {offer.price}
-                        </div>
+                        </p>
                         <p className="text-sm text-green-600 text-center font-medium mb-3">
                           {offer.highlight}
                         </p>
@@ -455,23 +501,34 @@ export default function Home() {
                             <li key={i} className="flex items-start">
                               <span className="mr-2 mt-1">
                                 <CheckCircle className="w-3 h-3 text-blue-600" />
-                              </span>{" "}
+                              </span>
                               {detail}
                             </li>
                           ))}
                         </ul>
-                        <div className="w-full flex justify-center pt-10 pb-2">
+                      </CardContent>
+
+                      <CardFooter className="flex flex-col gap-2">
+                        <div className="w-full flex justify-center pt-4 pb-10">
                           <span className="relative left-7 top-8">
                             {offer.gift}
                           </span>
                           <span>{offer.image}</span>
                         </div>
-                      </CardContent>
-                      <CardFooter className="flex flex-col gap-2">
                         <p className="text-xs text-gray-500">{offer.note}</p>
-                        <button className="w-full px-12 py-3 rounded-full bg-[#1F01B9] text-base font-semibold text-white transition-colors hover:bg-[#391FB6] cursor-pointer">
-                          Solicitar ahora
-                        </button>
+
+                        <a
+                          href={getWhatsAppUrl(offer.whatsappMessage)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={`Chatea sobre ${offer.title} por WhatsApp`}
+                          aria-label={`Abrir chat de WhatsApp para ${offer.title}`}
+                          className="w-full"
+                        >
+                          <button className="w-full px-12 py-3 rounded-full bg-[#1F01B9] text-base font-semibold text-white transition-colors hover:bg-[#391FB6] cursor-pointer">
+                            Solicitar ahora
+                          </button>
+                        </a>
                       </CardFooter>
                     </Card>
                   </div>
@@ -650,6 +707,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECCION CONTACTO */}
       <section id="contactanos" className="bg-white">
         <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-20 xl:pt-10 xl:pb-20 2xl:pt-20 2xl:pb-40">
           <div className="flex flex-col items-center justify-center text-center px-2 mb-12">
@@ -721,7 +779,7 @@ export default function Home() {
                   <div className="flex justify-between text-neutral-600">
                     <span>Sábados</span>
                     <span className="font-medium text-gray-900">
-                      10:00 AM - 2:00 PM
+                      9:00 AM - 6:00 PM
                     </span>
                   </div>
                   <div className="flex justify-between text-neutral-600">
@@ -839,6 +897,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOOTER */}
       <section className="bg-white">
         <footer className="bg-[#1F01B9] py-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -859,7 +918,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="col-span-1 pt-4">
-                  <img src="/img/Logo-Eufrosine-white.png" alt="Logo" className="w-full md:w-35 object-cover" />
+                  <img
+                    src="/img/Logo-Eufrosine-white.png"
+                    alt="Logo"
+                    className="w-full md:w-35 object-cover"
+                  />
                 </div>
               </div>
 
@@ -987,7 +1050,9 @@ export default function Home() {
             </div>
 
             <div className="border-t border-white pt-4 text-center text-gray-200">
-              <p className="text-sm">© 2024 Eufrosine. Todos los derechos reservados.</p>
+              <p className="text-sm">
+                © 2024 Eufrosine. Todos los derechos reservados.
+              </p>
             </div>
           </div>
         </footer>
