@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     siteName: companyData.name,
     images: [
       {
-        url: "/images/og-image.jpg", // Crea una imagen 1200x630px para redes sociales
+        url: "/img/og-image.jpg", // Crea una imagen 1200x630px para redes sociales
         width: 1200,
         height: 630,
         alt: companyData.name,
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: companyData.name,
     description: companyData.description,
-    images: ["/images/twitter-image.jpg"], // Crea una imagen 1200x600px para Twitter
+    images: ["/img/twitter-image.jpg"], // Crea una imagen 1200x600px para Twitter
     creator: "@tuempresa", // Tu handle de Twitter si tienes
   },
 

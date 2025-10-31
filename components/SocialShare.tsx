@@ -32,11 +32,11 @@ export default function SocialShare({ title, url, description }: SocialShareProp
       </a>
       
       <a
-        href={socialLinks.twitter}
+        href={socialLinks.instagram}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition-colors"
-        aria-label="Compartir en Twitter"
+        className="p-2 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors"
+        aria-label="Compartir en Instagram"
       >
         <Twitter size={20} />
       </a>
