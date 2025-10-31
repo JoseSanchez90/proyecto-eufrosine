@@ -36,6 +36,7 @@ const companyData = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eufrosine.vercel.app/"),
   title: {
     default: companyData.name,
     template: `%s | ${companyData.name}`,

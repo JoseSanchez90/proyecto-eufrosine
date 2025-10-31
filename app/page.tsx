@@ -1012,13 +1012,10 @@ export default function Home() {
                 <h4 className="text-white font-semibold mb-4">Contacto</h4>
                 <ul className="flex flex-col space-y-2 text-gray-200">
                   <li className="flex items-center gap-4">
-                    <Phone className="w-4 h-4" /> +51 999 888 777
+                    <Phone className="w-4 h-4" /> 903 565 918
                   </li>
                   <li className="flex items-center gap-4">
-                    <Mail className="w-4 h-4" /> contacto@eufrosine.com
-                  </li>
-                  <li className="flex items-center gap-4">
-                    <MapPin className="w-4 h-4" /> Av. Principal 1234, Lima
+                    <MapPin className="w-4 h-4" />Hualmay, Huacho, Lima
                   </li>
                 </ul>
               </div>
@@ -1027,21 +1024,21 @@ export default function Home() {
               <div>
                 <h4 className="text-white font-semibold mb-4">Síguenos</h4>
                 <div className="flex gap-6">
-                  <a href="#" className="cursor-pointer">
+                  <a href="https://api.whatsapp.com/send?phone=51903565918" target="_blank" rel="noopener" className="cursor-pointer">
                     <FaWhatsapp
-                      size={30}
+                      size={26}
                       className="text-white hover:text-green-600 transition-all duration-200"
                     />
                   </a>
-                  <a href="#" className="cursor-pointer">
+                  <a href="https://www.facebook.com/aguaeufrosine" target="_blank" rel="noopener" className="cursor-pointer">
                     <FaFacebook
-                      size={30}
+                      size={26}
                       className="text-white hover:text-blue-500 transition-all duration-200"
                     />
                   </a>
-                  <a href="#" className="cursor-pointer">
+                  <a href="https://www.instagram.com/aguaeufrosine/" target="_blank" rel="noopener" className="cursor-pointer">
                     <FaInstagram
-                      size={30}
+                      size={26}
                       className="text-white hover:text-orange-600 transition-all duration-200"
                     />
                   </a>
