@@ -24,7 +24,7 @@ export const Products = [
     amount: "Envio gratuito",
   },
   {
-    image: <img src="/img/presentacion10lt.png" alt="Bidón 10 litros" className="w-180 h-55 object-cover rounded-[40px]" />,
+    image: <img src="/img/presentacion20lt.png" alt="Bidón 10 litros" className="w-180 h-55 object-cover rounded-[40px]" />,
     title: "Recarga Bidón 20 Lts",
     description:
       "Unicamente se recarga el bidón, no incluye envase.",

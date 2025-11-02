@@ -3,7 +3,7 @@ import nodemailer from "nodemailer"
 
 export async function POST(req: Request) {
   try {
-    const { name, company, email, phone, message } = await req.json()
+    const { name, email, phone, message } = await req.json()
 
     // Verifica que las variables están definidas
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {

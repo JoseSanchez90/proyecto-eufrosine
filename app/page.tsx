@@ -20,6 +20,10 @@ import { useCallback, useEffect, useState } from "react";
 import { FaFacebook, FaHashtag, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Label } from "@/components/ui/label";
 import { formatPrice } from "@/components/utils/formatters";
+import { PrivacyPolicy } from "@/components/privacyPolicy";
+import { TermsAndConditions } from "@/components/termsAndConditions";
+import { ComplaintBook } from "@/components/complaintBook";
+import Swal from "sweetalert2";
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -68,12 +72,16 @@ export default function Home() {
     },
   ];
 
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [showComplaintBook, setShowComplaintBook] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -83,7 +91,7 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
+    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/contact", {
@@ -94,11 +102,67 @@ export default function Home() {
 
       if (!response.ok) throw new Error("Error sending message");
 
-      setStatus("success");
+      // Alerta de éxito con SweetAlert2
+      await Swal.fire({
+        title: "¡Mensaje Enviado!",
+        html: `
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-[#1F01B9] mb-2">¡Gracias por contactarnos!</h3>
+          <p class="text-gray-600">Hemos recibido tu mensaje correctamente.</p>
+          <p class="text-gray-600 mt-2">Te responderemos dentro de las 24 horas.</p>
+        </div>
+      `,
+        icon: "success",
+        showClass: {
+          popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `,
+        },
+        hideClass: {
+          popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `,
+        },
+        background: "#f0f9ff",
+        confirmButtonColor: "#1F01B9",
+        confirmButtonText: "Entendido",
+        customClass: {
+          popup: "rounded-3xl shadow-2xl border-2 border-[#1F01B9]",
+          confirmButton: "rounded-2xl px-6 py-3 font-semibold",
+        },
+      });
+
+      // Limpiar formulario
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       console.error(error);
-      setStatus("error");
+
+      // Alerta de error con SweetAlert2
+      await Swal.fire({
+        title: "¡Hubo un error!",
+        text: "Hubo un problema al enviar tu mensaje. Por favor, inténtalo nuevamente.",
+        icon: "error",
+        showClass: {
+          popup: `
+          animate__animated
+          animate__shakeX
+          animate__faster
+        `,
+        },
+        background: "#fef2f2",
+        confirmButtonColor: "#dc2626",
+        confirmButtonText: "Reintentar",
+        customClass: {
+          popup: "rounded-3xl shadow-2xl border-2 border-red-500",
+          confirmButton: "rounded-2xl px-6 py-3 font-semibold",
+        },
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -139,8 +203,18 @@ export default function Home() {
       message
     )}`;
 
+  // Bloquear scroll del body
+  useEffect(() => {
+    if (showPrivacyPolicy || showTerms || showComplaintBook) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [showPrivacyPolicy, showTerms, showComplaintBook]);
+
   return (
-    <main className="relative w-full h-full">
+    <>
       {/* SECCIÓN INICIO */}
       <section id="inicio" className="relative h-screen w-full">
         <video
@@ -264,7 +338,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTOS */}
+      {/* PRESENTACIONES */}
       <section id="productos" className="bg-white">
         <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-40 2xl:pb-20">
           <div className="w-full h-full text-center">
@@ -813,6 +887,7 @@ export default function Home() {
                         className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
                         placeholder="Tu nombre completo"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -831,6 +906,7 @@ export default function Home() {
                         className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
                         placeholder="tu@email.com"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -848,6 +924,7 @@ export default function Home() {
                         type="tel"
                         className="w-full px-4 py-3 rounded-full border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors"
                         placeholder="+51 999 999 999"
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -866,25 +943,26 @@ export default function Home() {
                         className="w-full text-sm px-4 py-3 rounded-3xl border-2 border-neutral-300 bg-white text-gray-900 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                         placeholder="Cuéntanos cómo podemos ayudarte..."
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
 
+                  {/* Botón con spinner */}
                   <button
                     type="submit"
-                    className="w-full bg-[#1F01B9] hover:bg-[#391FB6] text-white py-3 rounded-full text-base font-semibold transition-colors cursor-pointer"
-                    disabled={status === "loading"}
+                    className="w-full bg-[#1F01B9] hover:bg-[#391FB6] text-white py-3 rounded-full text-base font-semibold transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
                   >
-                    {status === "loading" ? "Enviando..." : "Enviar"}
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      "Enviar Mensaje"
+                    )}
                   </button>
-                  {status === "success" && (
-                    <p className="text-green-500">
-                      Mensaje enviado satisfactoriamente!
-                    </p>
-                  )}
-                  {status === "error" && (
-                    <p className="text-red-500">Error al enviar mensaje.</p>
-                  )}
 
                   <p className="text-xs text-center text-neutral-500 my-3">
                     Al enviar este formulario, aceptas nuestra política de
@@ -899,7 +977,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <section className="bg-white">
-        <footer className="bg-[#1F01B9] py-10 px-4 sm:px-6 lg:px-8">
+        <footer className="bg-[#1F01B9] pt-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 md:justify-items-center">
               {/* Marca */}
@@ -926,127 +1004,148 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Enlaces Rapidos */}
+              {/* Enlaces Rápidos */}
               <div>
-                <h4 className="text-white font-semibold mb-4">
+                <h4 className="text-white font-semibold mb-4 text-lg">
                   Enlaces Rápidos
                 </h4>
-                <ul className="space-y-2 text-gray-200">
-                  <li>
-                    <button
-                      onClick={() =>
-                        document
-                          .getElementById("inicio")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                      className="hover:text-blue-400 transition-colors"
-                    >
-                      Inicio
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() =>
-                        document
-                          .getElementById("nosotros")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                      className="hover:text-blue-400 transition-colors"
-                    >
-                      Nosotros
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() =>
-                        document
-                          .getElementById("productos")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                      className="hover:text-blue-400 transition-colors"
-                    >
-                      Presentaciones
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() =>
-                        document
-                          .getElementById("proceso")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                      className="hover:text-blue-400 transition-colors"
-                    >
-                      Proceso
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() =>
-                        document
-                          .getElementById("ofertas")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                      className="hover:text-blue-400 transition-colors"
-                    >
-                      Ofertas
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() =>
-                        document
-                          .getElementById("contacto")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }
-                      className="hover:text-blue-400 transition-colors"
-                    >
-                      Contacto
-                    </button>
-                  </li>
-                </ul>
+                <div className="space-y-3 text-gray-200">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("inicio")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Inicio
+                  </button>
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("nosotros")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Nosotros
+                  </button>
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("productos")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Presentaciones
+                  </button>
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("proceso")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Proceso
+                  </button>
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("ofertas")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Ofertas
+                  </button>
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById("contacto")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Contacto
+                  </button>
+                </div>
               </div>
 
-              {/* Contacto */}
+              {/* Enlaces Legales */}
               <div>
-                <h4 className="text-white font-semibold mb-4">Contacto</h4>
-                <ul className="flex flex-col space-y-2 text-gray-200">
-                  <li className="flex items-center gap-4">
-                    <Phone className="w-4 h-4" /> 903 565 918
-                  </li>
-                  <li className="flex items-center gap-4">
-                    <MapPin className="w-4 h-4" />Hualmay, Huacho, Lima
-                  </li>
-                </ul>
+                <h4 className="text-white font-semibold mb-4 text-lg">Legal</h4>
+                <div className="space-y-3 text-gray-200">
+                  <button
+                    onClick={() => setShowPrivacyPolicy(true)}
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Políticas de Privacidad
+                  </button>
+                  <button
+                    onClick={() => setShowTerms(true)}
+                    className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
+                  >
+                    Términos y Condiciones
+                  </button>
+                  <button
+                    onClick={() => setShowComplaintBook(true)}
+                    className="flex items-center gap-2 group cursor-pointer mt-6"
+                  >
+                    <img
+                      src="/img/libro_reclam.jpg"
+                      alt="Libro_reclamaciones"
+                      className="w-40 rounded-2xl"
+                    />
+                  </button>
+                </div>
               </div>
 
               {/* Social */}
               <div>
-                <h4 className="text-white font-semibold mb-4">Síguenos</h4>
+                <h4 className="text-white font-semibold mb-4 text-lg">
+                  Síguenos
+                </h4>
                 <div className="flex gap-6">
-                  <a href="https://api.whatsapp.com/send?phone=51903565918" target="_blank" rel="noopener" className="cursor-pointer">
+                  <a
+                    href="https://api.whatsapp.com/send?phone=51903565918"
+                    target="_blank"
+                    rel="noopener"
+                    className="cursor-pointer group"
+                  >
                     <FaWhatsapp
                       size={26}
-                      className="text-white hover:text-green-600 transition-all duration-200"
+                      className="text-white hover:text-green-400 transition-all duration-200 transform group-hover:scale-110"
                     />
                   </a>
-                  <a href="https://www.facebook.com/aguaeufrosine" target="_blank" rel="noopener" className="cursor-pointer">
+                  <a
+                    href="https://www.facebook.com/aguaeufrosine"
+                    target="_blank"
+                    rel="noopener"
+                    className="cursor-pointer group"
+                  >
                     <FaFacebook
                       size={26}
-                      className="text-white hover:text-blue-500 transition-all duration-200"
+                      className="text-white hover:text-blue-300 transition-all duration-200 transform group-hover:scale-110"
                     />
                   </a>
-                  <a href="https://www.instagram.com/aguaeufrosine/" target="_blank" rel="noopener" className="cursor-pointer">
+                  <a
+                    href="https://www.instagram.com/aguaeufrosine/"
+                    target="_blank"
+                    rel="noopener"
+                    className="cursor-pointer group"
+                  >
                     <FaInstagram
                       size={26}
-                      className="text-white hover:text-orange-600 transition-all duration-200"
+                      className="text-white hover:text-pink-400 transition-all duration-200 transform group-hover:scale-110"
                     />
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-white pt-4 text-center text-gray-200">
+            <div className="border-t border-white/30 py-4 text-center text-gray-200">
               <p className="text-sm">
                 © 2024 Eufrosine. Todos los derechos reservados.
               </p>
@@ -1054,6 +1153,72 @@ export default function Home() {
           </div>
         </footer>
       </section>
-    </main>
+
+      {/* Modal de Políticas de Privacidad */}
+      {showPrivacyPolicy && (
+        <div className="fixed inset-0 z-50">
+          {/* Backdrop que bloquea todo - AGREGAR ESTO */}
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-xs"
+            onClick={() => setShowPrivacyPolicy(false)}
+            onWheel={(e) => e.stopPropagation()} // ← Esto bloquea el scroll
+          />
+
+          {/* Modal - AGREGAR overflow-hidden al body cuando el modal esté abierto */}
+          <div
+            className="fixed inset-0 flex items-center justify-center p-4"
+            onWheel={(e) => e.stopPropagation()} // ← Esto también ayuda
+          >
+            <div className="bg-white rounded-3xl w-full max-w-6xl h-full max-h-[85vh] overflow-hidden flex flex-col">
+              <div className="flex-1 overflow-y-auto">
+                <PrivacyPolicy onBack={() => setShowPrivacyPolicy(false)} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Términos y Condiciones */}
+      {showTerms && (
+        <div className="fixed inset-0 z-50">
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-xs"
+            onClick={() => setShowTerms(false)}
+            onWheel={(e) => e.stopPropagation()}
+          />
+          <div
+            className="fixed inset-0 flex items-center justify-center p-4"
+            onWheel={(e) => e.stopPropagation()}
+          >
+            <div className="bg-white rounded-3xl w-full max-w-6xl h-full max-h-[85vh] overflow-hidden flex flex-col">
+              <div className="flex-1 overflow-y-auto">
+                <TermsAndConditions onBack={() => setShowTerms(false)} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Libro de Reclamaciones */}
+      {showComplaintBook && (
+        <div className="fixed inset-0 z-50">
+          <div
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowComplaintBook(false)}
+            onWheel={(e) => e.stopPropagation()}
+          />
+          <div
+            className="fixed inset-0 flex items-center justify-center p-4"
+            onWheel={(e) => e.stopPropagation()}
+          >
+            <div className="bg-white rounded-3xl w-full max-w-6xl h-full max-h-[85vh] overflow-hidden flex flex-col">
+              <div className="flex-1 overflow-y-auto">
+                <ComplaintBook onBack={() => setShowComplaintBook(false)} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
