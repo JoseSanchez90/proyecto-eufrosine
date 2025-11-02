@@ -1,4 +1,4 @@
-import { Oleo_Script } from "next/font/google";
+import { MuseoModerno, Oleo_Script } from "next/font/google";
 import { Pacifico } from "next/font/google";
 
 export const oleo = Oleo_Script({
@@ -12,3 +12,11 @@ export const pacifico = Pacifico({
   weight: ["400"],
   variable: "--font-pacifico",
 });
+
+export const museomoderno = MuseoModerno({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-museo-moderno",
+})

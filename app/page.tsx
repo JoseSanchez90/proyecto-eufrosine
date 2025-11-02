@@ -1,7 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { pacifico } from "@/lib/fonts";
+import { museomoderno, pacifico } from "@/lib/fonts";
 import { Products } from "@/components/products";
 import clsx from "clsx";
 import { BadgeCheckIcon, CheckCircle, Mail, MapPin, Phone } from "lucide-react";
@@ -1145,9 +1145,24 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="border-t border-white/30 py-4 text-center text-gray-200">
+            <div className="flex flex-col lg:flex-row-reverse items-center justify-between border-t border-white/30 py-4 text-center text-gray-200">
               <p className="text-sm">
                 © 2024 Eufrosine. Todos los derechos reservados.
+              </p>
+              <p className="text-xs pt-2 lg:pt-0">
+                Diseñado y desarrollado por{" "}
+                <a
+                  href="https://nexbloq.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  className={clsx(
+                    "text-xs italic font-medium",
+                    museomoderno.className
+                  )}
+                >
+                  Nexbloq
+                </a>
+                .
               </p>
             </div>
           </div>
