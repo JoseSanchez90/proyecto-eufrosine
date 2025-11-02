@@ -250,7 +250,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
           {/* Información de la Empresa */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <BookOpen className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -303,7 +303,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
             {/* Datos del Consumidor */}
             <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
               <div className="flex items-start space-x-4 mb-6">
-                <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+                <div className="bg-blue-100 p-2 rounded-2xl">
                   <User className="text-blue-600" size={20} />
                 </div>
                 <div>
@@ -474,7 +474,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
             {/* Detalles del Reclamo */}
             <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
               <div className="flex items-start space-x-4 mb-6">
-                <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+                <div className="bg-blue-100 p-2 rounded-2xl">
                   <FileText className="text-blue-600" size={20} />
                 </div>
                 <div>

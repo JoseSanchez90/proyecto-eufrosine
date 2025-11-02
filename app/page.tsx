@@ -399,7 +399,7 @@ export default function Home() {
 
       {/* SECCIÓN PROCESO */}
       <section id="proceso" className="bg-white">
-        <div className="min-h-screen w-full mx-auto pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-28 2xl:pb-20">
+        <div className="min-h-screen w-full mx-auto pt-20 pb-20 xl:pt-20 xl:pb-10 2xl:pt-28 2xl:pb-20">
           <div className="z-10 flex flex-col items-center justify-center text-center px-6">
             <h2
               className={clsx(
@@ -468,7 +468,7 @@ export default function Home() {
 
       {/* SECCION DE OFERTAS ESPECIALES */}
       <section id="ofertas" className="bg-white">
-        <div className="min-h-screen w-full mx-auto pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
+        <div className="w-full mx-auto pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
           <div className="flex flex-col items-center justify-center text-center px-6">
             <h2
               className={clsx(
@@ -630,7 +630,7 @@ export default function Home() {
 
       {/* SECCION EVENTOS */}
       <section id="eventos" className="bg-white">
-        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
+        <div className="max-w-sm sm:max-w-5xl 2xl:max-w-6xl mx-auto min-h-screen w-full pt-10 pb-10 xl:pt-10 xl:pb-10 2xl:pt-20 2xl:pb-20">
           <div className="flex flex-col items-center justify-center text-center px-6">
             <h2
               className={clsx(

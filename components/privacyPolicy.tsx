@@ -100,7 +100,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Section 1 */}
           <section className="bg-gray-50 rounded-3xl p-4 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -161,7 +161,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Section 2 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <UserCheck className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -205,7 +205,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Section 3 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Lock className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -241,7 +241,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Section 4 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Shield className="text-blue-600" size={20} />
               </div>
               <div>
@@ -284,7 +284,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Section 5 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Lock className="text-blue-600" size={20} />
               </div>
               <div>
@@ -331,7 +331,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Section 6 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-blue-600" size={20} />
               </div>
               <div>
@@ -360,7 +360,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           {/* Sección 7 - Derechos ARCO (como ejemplo de continuación) */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <UserCheck className="text-[#1F01B9]" size={20} />
               </div>
               <div>

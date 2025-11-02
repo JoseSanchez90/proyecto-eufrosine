@@ -98,7 +98,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 1 */}
           <section className="bg-gray-50 rounded-3xl p-4 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -109,7 +109,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
             </div>
             <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
               <div className="bg-white p-6 rounded-2xl space-y-3 shadow-sm text-base">
-                <div className="flex items-center gap-2">
+                <div className="flex items-start gap-2">
                   <div>
                     <CheckCircle className="w-5 text-[#1F01B9]" />
                   </div>
@@ -117,7 +117,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     <strong>Razón Social:</strong> Punto Vida H2O S.A.C.
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-start gap-2">
                   <div>
                     <CheckCircle className="w-5 text-[#1F01B9]" />
                   </div>
@@ -125,7 +125,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     <strong>RUC:</strong> 20613393367
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-start gap-2">
                   <div>
                     <CheckCircle className="w-5 text-[#1F01B9]" />
                   </div>
@@ -134,7 +134,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     Hualmay, Huaura, Lima
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-start gap-2">
                   <div>
                     <CheckCircle className="w-5 text-[#1F01B9]" />
                   </div>
@@ -143,7 +143,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     aguademesaeufrosineperu@gmail.com
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-start gap-2">
                   <div>
                     <CheckCircle className="w-5 text-[#1F01B9]" />
                   </div>
@@ -162,7 +162,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 2 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Scale className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -205,7 +205,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 3 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <ShoppingCart className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -246,7 +246,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 4 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Shield className="text-blue-600" size={20} />
               </div>
               <div>
@@ -255,7 +255,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </h2>
               </div>
             </div>
-            <div className="pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
               <p>Proceso de solicitud y entrega de nuestros productos:</p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
@@ -293,7 +293,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 5 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-blue-600" size={20} />
               </div>
               <div>
@@ -302,7 +302,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </h2>
               </div>
             </div>
-            <div className="pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
               <p>Condiciones económicas y métodos de pago:</p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
@@ -329,7 +329,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 6 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Shield className="text-blue-600" size={20} />
               </div>
               <div>
@@ -338,7 +338,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </h2>
               </div>
             </div>
-            <div className="pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
               <p>
                 Políticas de garantía de calidad y procedimientos de devolución:
               </p>
@@ -378,7 +378,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 7 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Scale className="text-[#1F01B9]" size={20} />
               </div>
               <div>
@@ -427,7 +427,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 8 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-blue-600" size={20} />
               </div>
               <div>
@@ -469,7 +469,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 9 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <Scale className="text-blue-600" size={20} />
               </div>
               <div>
@@ -494,7 +494,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           {/* Section 10 */}
           <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
-              <div className="bg-blue-100 p-2 lg:p-3 rounded-2xl">
+              <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-blue-600" size={20} />
               </div>
               <div>
