@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, Twitter, Instagram, MessageCircle } from 'lucide-react';
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 interface SocialShareProps {
   title: string;
@@ -14,7 +14,6 @@ export default function SocialShare({ title, url, description }: SocialShareProp
   
   const socialLinks = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
-    twitter: `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`,
     whatsapp: `https://wa.me/?text=${shareText}%20${shareUrl}`,
     instagram: `https://www.instagram.com/?url=${shareUrl}` // Instagram no tiene sharing directo
   };
@@ -28,7 +27,7 @@ export default function SocialShare({ title, url, description }: SocialShareProp
         className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
         aria-label="Compartir en Facebook"
       >
-        <Facebook size={20} />
+        <FaFacebook size={20} />
       </a>
       
       <a
@@ -38,7 +37,7 @@ export default function SocialShare({ title, url, description }: SocialShareProp
         className="p-2 bg-orange-400 text-white rounded-lg hover:bg-orange-500 transition-colors"
         aria-label="Compartir en Instagram"
       >
-        <Twitter size={20} />
+        <FaInstagram size={20} />
       </a>
       
       <a
@@ -48,7 +47,7 @@ export default function SocialShare({ title, url, description }: SocialShareProp
         className="p-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
         aria-label="Compartir en WhatsApp"
       >
-        <MessageCircle size={20} />
+        <FaWhatsapp size={20} />
       </a>
     </div>
   );

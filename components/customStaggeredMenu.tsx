@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoCloseCircle } from "react-icons/io5";
+import { useBodyScrollLock } from "./hook/useBodyScrollLock";
 
 interface MenuItem {
   number: string;
@@ -27,6 +28,8 @@ export default function CustomStaggeredMenu({
 }: CustomStaggeredMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  useBodyScrollLock(isOpen);
 
   // Detecta si está en móvil
   useEffect(() => {
@@ -93,7 +96,7 @@ export default function CustomStaggeredMenu({
                 }}
                 className={`fixed top-0 right-0 h-full ${
                   i === 2 ? "z-50" : "z-40"
-                } w-[280px] sm:w-[380px]`}
+                } w-60 md:w-[380px]`}
                 style={{ backgroundColor: color }}
               />
             ))}
@@ -109,7 +112,7 @@ export default function CustomStaggeredMenu({
                 duration: animationSpeed,
                 delay: 0.25,
               }}
-              className="fixed top-0 right-0 h-full w-[280px] sm:w-[380px] bg-white shadow-2xl z-50 flex flex-col justify-between py-10 px-8"
+              className="fixed top-0 right-0 h-full w-60 md:w-[380px] bg-white shadow-2xl z-50 flex flex-col justify-between py-10 px-8"
             >
               {/* Cerrar */}
               <button
@@ -136,14 +139,22 @@ export default function CustomStaggeredMenu({
                       href={`#${item.link}`}
                       onClick={(e) => {
                         e.preventDefault();
-                        const el = document.getElementById(item.link);
-                        if (el) el.scrollIntoView({ behavior: "smooth" });
+
+                        // Cerrar el menú primero
                         setIsOpen(false);
+
+                        // Pequeño delay para permitir que el scroll se restaure
+                        setTimeout(() => {
+                          const el = document.getElementById(item.link);
+                          if (el) {
+                            el.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }, 100); // 100ms es suficiente para que el body se restaure
                       }}
-                      className="flex gap-2 text-2xl xl:text-3xl 2xl:text-4xl tracking-tighter font-bold text-gray-800 hover:text-blue-600 transition"
+                      className="flex gap-1 lg:gap-2 text-lg xl:text-3xl 2xl:text-4xl tracking-tighter font-bold text-gray-800 hover:text-blue-600 transition"
                     >
                       <span>{item.label}</span>
-                      <span className="text-sm font-semibold tracking-tight text-blue-600">
+                      <span className="text-xs lg:text-sm font-semibold tracking-tight text-blue-600">
                         {item.number}
                       </span>
                     </a>

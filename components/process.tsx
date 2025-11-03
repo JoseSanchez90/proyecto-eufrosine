@@ -11,28 +11,28 @@ export function GlowingEffectDemoSecond() {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8 2xl:gap-12 w-full max-w-5xl 2xl:max-w-6xl mx-auto">
       <GridItem
-        imageUrl="/img/company1.jpg"
+        imageUrl="/img/company1.webp"
         icon={<Filter className="h-5 w-5 text-white" />}
         title="Filtración Múltiple"
         description="Sistema de filtros avanzados que eliminan impurezas y sedimentos del agua en múltiples etapas."
       />
 
       <GridItem
-        imageUrl="/img/company2.jpg"
+        imageUrl="/img/company2.webp"
         icon={<Beaker className="h-5 w-5 text-white" />}
         title="Purificación Avanzada"
         description="Proceso de ósmosis inversa y luz ultravioleta para garantizar la máxima pureza del agua."
       />
 
       <GridItem
-        imageUrl="/img/control.jpg"
+        imageUrl="/img/control.webp"
         icon={<CheckCircle className="h-5 w-5 text-white" />}
         title="Control de Calidad"
         description="Análisis constante en nuestro laboratorio para asegurar que cada botella cumple nuestros estándares."
       />
 
       <GridItem
-        imageUrl="/img/company3.jpg"
+        imageUrl="/img/company3.webp"
         icon={<Truck className="h-5 w-5 text-white" />}
         title="Embotellado y Distribución"
         description="Embotellado automático en ambiente controlado y distribución eficiente a todo el país."
@@ -51,7 +51,7 @@ interface GridItemProps {
 const GridItem = ({ imageUrl, icon, title, description }: GridItemProps) => {
   return (
     <li className="list-none">
-      <div className="relative flex justify-center items-center h-full p-6 rounded-3xl overflow-hidden shadow-[8px_8px_30px_#bebebe,-8px_-8px_30px_#ffffff] transition-all duration-500 group">
+      <div className="relative flex justify-center items-center h-full p-2 md:p-6 rounded-3xl overflow-hidden shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] transition-all duration-500 group">
 
         {/* Imagen de fondo */}
         <div
