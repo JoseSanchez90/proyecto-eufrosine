@@ -114,7 +114,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
               <div className="bg-white p-4 lg:p-6 rounded-2xl space-y-3 shadow-sm">
                 <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Razón Social:</strong> Punto Vida H2O S.A.C.
@@ -122,7 +122,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                 </div>
                 <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>RUC:</strong> 20613393367
@@ -130,7 +130,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                 </div>
                 <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Domicilio:</strong> Av. Cincuentenario Nro 390,
@@ -139,7 +139,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                 </div>
                 <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Teléfono:</strong> 903 565 918

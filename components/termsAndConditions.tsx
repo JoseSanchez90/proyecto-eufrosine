@@ -107,9 +107,9 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
-              <div className="bg-white p-6 rounded-2xl space-y-3 shadow-sm text-base">
-                <div className="flex items-start gap-2">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
+              <div className="bg-white p-4 lg:p-6 rounded-2xl space-y-3 shadow-sm text-base">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
                     <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
@@ -117,7 +117,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     <strong>Razón Social:</strong> Punto Vida H2O S.A.C.
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
                     <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
@@ -125,7 +125,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     <strong>RUC:</strong> 20613393367
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
                     <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
@@ -134,7 +134,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     Hualmay, Huaura, Lima
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
                     <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>

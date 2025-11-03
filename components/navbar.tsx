@@ -54,7 +54,6 @@ const menuItems = [
 const socialItems = [
   { label: "Facebook", link: "https://www.facebook.com/" },
   { label: "Instagram", link: "https://www.instagram.com/" },
-  { label: "WhatsApp", link: "https://web.whatsapp.com/" },
 ];
 
 function Navbar() {
@@ -72,7 +71,7 @@ function Navbar() {
             inicio.scrollIntoView({ behavior: "smooth" });
           }
         }}
-        animate={{ width: isHovered ? "10.5rem" : "3.5rem" }}
+        animate={{ width: isHovered ? "11rem" : "3.5rem" }}
         transition={{ type: "spring", stiffness: 120, damping: 15 }}
         className="hidden cursor-pointer overflow-hidden bg-[#1F01B9] border-2 border-gray-200 rounded-full h-14 xl:flex items-center justify-start shadow-md"
       >

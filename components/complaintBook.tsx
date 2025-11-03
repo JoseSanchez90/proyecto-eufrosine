@@ -260,7 +260,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
               </div>
             </div>
             <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
-              <div className="bg-white p-6 rounded-2xl space-y-3 shadow-sm text-base">
+              <div className="bg-white p-4 lg:p-6 rounded-2xl space-y-3 shadow-sm text-base">
                 <div className="flex items-start gap-2">
                   <div>
                     <CheckCircle className="text-[#1F01B9]" size={18} />

@@ -15,6 +15,7 @@ import Swal from "sweetalert2";
 import OffersCarousel from "@/components/offersCarousel";
 import PresentationsCarousel from "@/components/productsCarousel";
 import { BiSolidOffer } from "react-icons/bi";
+import OptimizedVideo from "@/components/optimized-video";
 
 export default function Home() {
   const Valores = [
@@ -170,26 +171,19 @@ export default function Home() {
     <main className="h-full w-full">
       {/* SECCIÓN INICIO */}
       <section id="inicio" className="relative h-screen">
-        <video
-          src="/video/background-mobile.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute lg:fixed inset-0 w-full h-full object-cover -z-10"
-        />
+        <OptimizedVideo />
         <div className="absolute h-full inset-0 bg-black/50 -z-10" />
 
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
           <h1
             className={clsx(
-              "text-4xl md:text-5xl 2xl:text-7xl mb-8 text-white font-bold",
+              "text-3xl md:text-4xl 2xl:text-7xl mb-8 text-white font-bold",
               pacifico.className
             )}
           >
             Hidratación Pura, Vida Sana
           </h1>
-          <p className="max-w-4xl text-xl md:text-2xl 2xl:text-3xl text-gray-200 mb-8 font-semibold">
+          <p className="max-w-4xl text-lg md:text-2xl 2xl:text-3xl text-gray-200 mb-8 font-semibold">
             Eufrosine te ofrece agua purificada de la más alta calidad, esencial
             para tu bienestar diario y salud integral.
           </p>
@@ -221,7 +215,7 @@ export default function Home() {
           id="nosotros"
           className="max-w-sm sm:max-w-xl lg:max-w-5xl 2xl:max-w-7xl mx-auto px-4 pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-30 2xl:pb-20"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 sm:gap-24 2xl:gap-38">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 2xl:gap-38">
             <div className="flex flex-col text-start">
               <h2
                 className={clsx(
@@ -246,7 +240,7 @@ export default function Home() {
                 todos.
               </p>
 
-              <div className="flex items-center justify-center gap-4 lg:gap-6 2xl:gap-10 mt-6 2xl:mt-12">
+              <div className="flex items-center justify-center gap-4 lg:gap-6 2xl:gap-10 pt-8 2xl:pt-12">
                 <div className="rounded-[30px] p-4 sm:p-6 bg-[#f5f5f5] shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
                   <h2 className="text-xl xl:text-3xl text-blue-600 font-extrabold">
                     5 +
@@ -344,7 +338,7 @@ export default function Home() {
         </section>
 
         {/* SECCIÓN COMPROMISO */}
-        <section className="flex flex-col justify-center items-center py-18 bg-linear-to-tr from-blue-800 via-blue-600 to-blue-400 rounded-[40px] mx-4 px-4">
+        <section className="max-w-xs md:max-w-xl lg:max-w-5xl 2xl:max-w-6xl flex flex-col justify-center items-center py-18 bg-linear-to-tr from-blue-800 via-blue-500 to-blue-300 rounded-[40px] px-4 mx-auto shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
           <div className="w-full max-w-sm px-4 xl:max-w-6xl flex flex-col lg:flex-row justify-center items-center gap-14 xl:gap-16">
             <div className="space-y-4">
               <div>
@@ -364,20 +358,20 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-y-2">
-                <Badge variant="secondary" className="flex items-center gap-2">
-                  <CheckCircle className="w-4 text-blue-700" />
+                <div className="w-fit px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
+                  <CheckCircle className="text-blue-700" size={14} />
                   <p className="text-blue-700">Certificación ISO 9001</p>
-                </Badge>
-                <Badge variant="secondary" className="flex items-center gap-2">
-                  <CheckCircle className="w-4 text-blue-700" />
+                </div>
+                <div className="w-fit px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
+                  <CheckCircle className="text-blue-700" size={14}/>
                   <p className="text-blue-700">Normas sanitarias nacionales</p>
-                </Badge>
-                <Badge variant="secondary" className="flex items-center gap-2">
-                  <CheckCircle className="w-4 text-blue-700" />
+                </div>
+                <div className="w-fit px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
+                  <CheckCircle className="text-blue-700" size={14}/>
                   <p className="text-blue-700">
                     Análisis microbiológicos constantes
                   </p>
-                </Badge>
+                </div>
               </div>
             </div>
           </div>
