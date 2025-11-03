@@ -213,7 +213,7 @@ export default function Home() {
         {/* SECCIÓN NOSOTROS */}
         <section
           id="nosotros"
-          className="max-w-sm sm:max-w-xl lg:max-w-5xl 2xl:max-w-7xl mx-auto px-4 pt-20 pb-10 xl:pt-20 xl:pb-10 2xl:pt-30 2xl:pb-20"
+          className="max-w-sm sm:max-w-xl lg:max-w-5xl 2xl:max-w-7xl mx-auto px-4 pt-20 pb-10 xl:pt-10 xl:pb-10 2xl:pt-30 2xl:pb-20"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 2xl:gap-38">
             <div className="flex flex-col text-start">
@@ -338,19 +338,19 @@ export default function Home() {
         </section>
 
         {/* SECCIÓN COMPROMISO */}
-        <section className="max-w-xs md:max-w-xl lg:max-w-5xl 2xl:max-w-6xl flex flex-col justify-center items-center py-18 bg-linear-to-tr from-blue-800 via-blue-500 to-blue-300 rounded-[40px] px-4 mx-auto shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]">
-          <div className="w-full max-w-sm px-4 xl:max-w-6xl flex flex-col lg:flex-row justify-center items-center gap-14 xl:gap-16">
-            <div className="space-y-4">
+        <section className="max-w-xs md:max-w-lg lg:max-w-xl xl:max-w-5xl 2xl:max-w-6xl mx-auto">
+          <div className="w-full bg-linear-to-tr from-blue-800 via-blue-500 to-blue-300 rounded-[40px] mx-auto shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] p-8">
+            <div className="space-y-4 xl:px-20">
               <div>
                 <h2
                   className={clsx(
-                    "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-white mb-4 lg:mb-6",
+                    "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-white mb-4 lg:mb-6 text-center",
                     pacifico.className
                   )}
                 >
                   Certificaciones y Estándares
                 </h2>
-                <p className="max-w-3xl text-base xl:text-lg 2xl:text-xl text-zinc-200">
+                <p className="ext-base xl:text-lg 2xl:text-xl text-zinc-200 text-center">
                   Cumplimos con todas las normativas nacionales e
                   internacionales de calidad del agua. Nuestros procesos están
                   certificados por organismos reguladores y realizamos
@@ -358,15 +358,15 @@ export default function Home() {
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="w-fit px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
+                <div className="w-fit mx-auto px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
                   <CheckCircle className="text-blue-700" size={14} />
                   <p className="text-blue-700">Certificación ISO 9001</p>
                 </div>
-                <div className="w-fit px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
+                <div className="w-fit mx-auto px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
                   <CheckCircle className="text-blue-700" size={14}/>
                   <p className="text-blue-700">Normas sanitarias nacionales</p>
                 </div>
-                <div className="w-fit px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
+                <div className="w-fit mx-auto px-2 py-1 text-xs bg-white rounded-full flex items-center gap-2">
                   <CheckCircle className="text-blue-700" size={14}/>
                   <p className="text-blue-700">
                     Análisis microbiológicos constantes

@@ -48,7 +48,7 @@ export default function OptimizedVideo() {
       
       {/* Placeholder que se desvanece */}
       <div 
-        className={`absolute inset-0 bg-linear-to-br from-blue-900 via-blue-800 to-purple-900 -z-10 transition-opacity duration-00 ${
+        className={`absolute inset-0 bg-linear-to-br from-blue-900 via-blue-800 to-purple-900 -z-10 transition-opacity duration-500 ${
           isLoaded ? 'opacity-0' : 'opacity-100'
         }`}
       />
