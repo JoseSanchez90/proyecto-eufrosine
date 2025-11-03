@@ -14,6 +14,7 @@ import { ComplaintBook } from "@/components/complaintBook";
 import Swal from "sweetalert2";
 import OffersCarousel from "@/components/offersCarousel";
 import PresentationsCarousel from "@/components/productsCarousel";
+import { BiSolidOffer } from "react-icons/bi";
 
 export default function Home() {
   const Valores = [
@@ -192,11 +193,12 @@ export default function Home() {
             Eufrosine te ofrece agua purificada de la más alta calidad, esencial
             para tu bienestar diario y salud integral.
           </p>
-          <div className="flex gap-6 md:gap-8 mt-4">
+          <div className="flex gap-4 md:gap-8 mt-4">
             <button
               onClick={() => scrollToSection("ofertas")}
-              className="px-8 md:px-12 py-4 rounded-full bg-[#1F01B9] hover:bg-[#391FB6] text-base font-semibold text-white transition-colors cursor-pointer"
+              className="flex items-center gap-2 px-4 md:px-8 lg:px-12 py-4 rounded-full bg-[#1F01B9] hover:bg-[#391FB6] text-base font-semibold text-white transition-colors cursor-pointer"
             >
+              <BiSolidOffer className="shrink-0" size={18} />
               Ver Ofertas
             </button>
             <a
@@ -204,7 +206,8 @@ export default function Home() {
               target="_blank"
               rel="noopener"
             >
-              <button className="px-8 md:px-12 py-4 rounded-full bg-white hover:bg-zinc-200 text-base font-semibold text-black transition-colors cursor-pointer">
+              <button className="flex items-center gap-2 px-4 md:px-8 lg:px-12 py-4 rounded-full bg-white hover:bg-zinc-200 text-base font-semibold text-black transition-colors cursor-pointer">
+                <FaWhatsapp className="shrink-0 text-green-700" size={18} />
                 Escribenos
               </button>
             </a>
@@ -741,13 +744,13 @@ export default function Home() {
               <div className="col-span-1">
                 <h3
                   className={clsx(
-                    "text-4xl text-white mb-4",
+                    "text-3xl lg:text-4xl text-white mb-4",
                     pacifico.className
                   )}
                 >
                   eufrosine
                 </h3>
-                <p className="text-gray-200">
+                <p className="text-gray-200 text-sm lg:text-base">
                   Agua de mesa de alta calidad para una vida saludable
                 </p>
               </div>
@@ -755,17 +758,17 @@ export default function Home() {
                 <img
                   src="/img/Logo-Eufrosine-white.png"
                   alt="Logo"
-                  className="w-full md:w-35 object-cover"
+                  className="w-35 lg:w-40 object-cover"
                 />
               </div>
             </div>
 
             {/* Enlaces Rápidos */}
             <div>
-              <h4 className="text-white font-semibold mb-4 text-lg">
+              <h4 className="text-white font-semibold mb-4 text-base lg:text-lg">
                 Enlaces Rápidos
               </h4>
-              <div className="space-y-3 text-gray-200">
+              <div className="space-y-3 text-gray-200 text-sm lg:text-base">
                 <button
                   onClick={() =>
                     document
@@ -831,13 +834,13 @@ export default function Home() {
 
             {/* Enlaces Legales */}
             <div>
-              <h4 className="text-white font-semibold mb-4 text-lg">Legal</h4>
-              <div className="space-y-3 text-gray-200">
+              <h4 className="text-white font-semibold mb-4 text-base lg:text-lg">Legal</h4>
+              <div className="space-y-3 text-gray-200 text-sm lg:text-base">
                 <button
                   onClick={() => setShowPrivacyPolicy(true)}
                   className="hover:text-blue-300 transition-colors duration-200 flex items-center gap-2 group cursor-pointer"
                 >
-                  Políticas de Privacidad
+                  Políticas y Privacidad
                 </button>
                 <button
                   onClick={() => setShowTerms(true)}
@@ -860,21 +863,10 @@ export default function Home() {
 
             {/* Social */}
             <div>
-              <h4 className="text-white font-semibold mb-4 text-lg">
+              <h4 className="text-white font-semibold mb-4 text-base lg:text-lg">
                 Síguenos
               </h4>
               <div className="flex gap-6">
-                <a
-                  href="https://api.whatsapp.com/send?phone=51903565918"
-                  target="_blank"
-                  rel="noopener"
-                  className="cursor-pointer group"
-                >
-                  <FaWhatsapp
-                    size={26}
-                    className="text-white hover:text-green-400 transition-all duration-200 transform group-hover:scale-110"
-                  />
-                </a>
                 <a
                   href="https://www.facebook.com/aguaeufrosine"
                   target="_blank"
@@ -882,7 +874,7 @@ export default function Home() {
                   className="cursor-pointer group"
                 >
                   <FaFacebook
-                    size={26}
+                    size={20}
                     className="text-white hover:text-blue-300 transition-all duration-200 transform group-hover:scale-110"
                   />
                 </a>
@@ -893,7 +885,7 @@ export default function Home() {
                   className="cursor-pointer group"
                 >
                   <FaInstagram
-                    size={26}
+                    size={20}
                     className="text-white hover:text-pink-400 transition-all duration-200 transform group-hover:scale-110"
                   />
                 </a>

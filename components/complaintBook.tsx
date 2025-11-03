@@ -231,13 +231,13 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
           <div className="text-center mt-7 lg:mt-0">
             <h1
               className={clsx(
-                "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-[#1F01B9] mb-4",
+                "text-2xl lg:text-3xl 2xl:text-4xl font-bold text-[#1F01B9] mb-4",
                 pacifico.className
               )}
             >
               Libro de Reclamaciones
             </h1>
-            <p className="text-sm xl:text-base 2xl:text-xl text-gray-600">
+            <p className="text-sm lg:text-base 2xl:text-xl text-gray-600">
               Formulario oficial - Ley N° 29571
             </p>
           </div>
@@ -248,22 +248,22 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
       <div className="py-8 xl:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto space-y-8">
           {/* Información de la Empresa */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <BookOpen className="text-[#1F01B9]" size={20} />
+                <BookOpen className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   Información de la Empresa
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <div className="bg-white p-6 rounded-2xl space-y-3 shadow-sm text-base">
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Razón Social:</strong> Punto Vida H2O S.A.C.
@@ -271,7 +271,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>RUC:</strong> 20613393367
@@ -279,7 +279,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Domicilio:</strong> Av. Cincuentenario Nro 390,
@@ -288,7 +288,7 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Actividad:</strong> Venta de agua de mesa purificada
@@ -301,16 +301,16 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
           {/* Formulario de Reclamación */}
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Datos del Consumidor */}
-            <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+            <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="bg-blue-100 p-2 rounded-2xl">
-                  <User className="text-blue-600" size={20} />
+                  <User className="text-blue-600" size={18} />
                 </div>
                 <div>
-                  <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                  <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                     Datos del Consumidor
                   </h2>
-                  <p className="text-gray-600 text-sm mt-1">
+                  <p className="text-gray-600 text-xs md:tex-sm mt-1">
                     (Todos los campos son obligatorios)
                   </p>
                 </div>
@@ -472,13 +472,13 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
             </section>
 
             {/* Detalles del Reclamo */}
-            <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+            <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="bg-blue-100 p-2 rounded-2xl">
                   <FileText className="text-blue-600" size={20} />
                 </div>
                 <div>
-                  <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                  <h2 className="text-base lg:text-xl xl:text-2xl text-gray-900">
                     Detalles del Reclamo
                   </h2>
                 </div>
@@ -614,12 +614,12 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
           </form>
 
           {/* Información Legal */}
-          <section className="bg-blue-50 rounded-3xl p-6 xl:p-8 border border-[#1F01B9]/30">
-            <h3 className="text-lg font-semibold text-[#1F01B9] mb-4 text-center">
+          <section className="bg-blue-50 rounded-3xl p-3 lg:p-8 border border-[#1F01B9]/30">
+            <h3 className="text-base lg:text-lg font-semibold text-[#1F01B9] mb-4 text-center">
               Información Importante
             </h3>
             <div className="space-y-3 text-gray-700">
-              <p className="flex items-start gap-2">
+              <p className="flex text-sm lg:text-base items-start gap-2">
                 <CheckCircle className="w-5 text-[#1F01B9] shrink-0" />
                 Según la Ley N° 29571, tenemos 30 días calendario para responder
                 a su reclamo
@@ -628,9 +628,8 @@ export function ComplaintBook({ onBack }: ComplaintBookProps) {
                 <div>
                   <CheckCircle className="w-5 text-[#1F01B9] shrink-0" />
                 </div>
-                <p>
-                  Puede consultar el seguimiento de su reclamo al correo:{" "}
-                  <strong>aguademesaeufrosineperu@gmail.com</strong>{" "}
+                <p className="text-sm lg:text-base">
+                  Puede consultar el seguimiento de su reclamo al correo: aguademesaeufrosineperu@gmail.com
                 </p>
               </div>
             </div>
