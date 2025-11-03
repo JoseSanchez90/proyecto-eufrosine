@@ -46,7 +46,7 @@ function OffersCarousel() {
         {offers.map((offer) => (
           <div
             key={offer.id}
-            className="h-full bg-white border p-4 lg:p-6 flex flex-col justify-between rounded-[40px] shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
+            className="h-full bg-white p-4 lg:p-6 flex flex-col justify-between rounded-[40px] shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff]"
           >
             <div className="h-30 lg:h-20 flex flex-col gap-1">
               <h2 className="text-lg 2xl:text-xl font-bold text-center">
@@ -108,7 +108,7 @@ function OffersCarousel() {
           <div className="flex">
             {offers.map((offer) => (
               <div key={offer.id} className="flex-[0_0_80%] min-w-0 pl-5 pr-5">
-                <div className="h-full bg-white border flex flex-col justify-between rounded-[40px] p-4 shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] w-full will-change-transform">
+                <div className="h-full bg-white flex flex-col justify-between rounded-[40px] p-4 shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] w-full will-change-transform">
                   <div className="h-24 flex flex-col gap-1">
                     <h2 className="text-lg font-bold text-center">
                       {offer.title}

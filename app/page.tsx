@@ -625,7 +625,7 @@ export default function Home() {
             </div>
 
             {/* Columna derecha - Formulario */}
-            <div className="bg-white border rounded-[40px] p-6 lg:p-8 shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] md:p-6">
+            <div className="bg-white rounded-[40px] p-6 lg:p-8 shadow-[4px_4px_8px_#d1d1d1,-4px_-4px_8px_#ffffff] md:shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff] lg:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] md:p-6">
               <div className="space-y-6">
                 <form onSubmit={handleSubmit}>
                   <div className="space-y-4 mb-3">

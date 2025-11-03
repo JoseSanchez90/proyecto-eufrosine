@@ -62,13 +62,13 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           <div className="text-center mt-7 lg:mt-0">
             <h1
               className={clsx(
-                "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-[#1F01B9] mb-4",
+                "text-2xl lg:text-3xl 2xl:text-4xl font-bold text-[#1F01B9] mb-4",
                 pacifico.className
               )}
             >
               Políticas de Privacidad
             </h1>
-            <p className="text-sm xl:text-base 2xl:text-xl text-gray-600">
+            <p className="text-sm lg:text-base 2xl:text-xl text-gray-600">
               Última actualización: 1 de noviembre de 2025
             </p>
           </div>
@@ -80,11 +80,11 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Introduction */}
           <section className="text-start px-4">
-            <p className="text-lg xl:text-xl text-gray-700 leading-relaxed">
+            <p className="text-sm xl:text-xl text-gray-700 leading-relaxed">
               En{" "}
               <span
                 className={clsx(
-                  "text-[#1F01B9] text-2xl font-semibold",
+                  "text-[#1F01B9] text-xl lg:text-2xl font-semibold",
                   pacifico.className
                 )}
               >
@@ -98,57 +98,48 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Section 1 */}
-          <section className="bg-gray-50 rounded-3xl p-4 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <FileText className="text-[#1F01B9]" size={20} />
+                <FileText className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   1. Responsable del Tratamiento de Datos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>El responsable del tratamiento de sus datos personales es:</p>
-              <div className="bg-white p-4 lg:p-6 rounded-2xl space-y-3 shadow-sm text-base">
-                <div className="flex items-start gap-2">
+              <div className="bg-white p-4 lg:p-6 rounded-2xl space-y-3 shadow-sm">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Razón Social:</strong> Punto Vida H2O S.A.C.
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>RUC:</strong> 20613393367
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Domicilio:</strong> Av. Cincuentenario Nro 390,
                     Hualmay, Huaura, Lima
                   </p>
                 </div>
-                <div className="flex items-start gap-2">
+                <div className="flex items-start lg:items-center gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
-                  </div>
-                  <p>
-                    <strong>Correo electrónico:</strong>{" "}
-                    aguademesaeufrosineperu@gmail.com
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="w-5 text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Teléfono:</strong> 903 565 918
@@ -159,18 +150,18 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Section 2 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <UserCheck className="text-[#1F01B9]" size={20} />
+                <UserCheck className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   2. Información que Recopilamos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 A través de nuestro sitio web, únicamente recopilamos
                 información personal cuando usted voluntariamente nos la
@@ -178,21 +169,21 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     <strong>Nombre completo:</strong> Para personalizar nuestra
                     comunicación con usted
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     <strong>Correo electrónico:</strong> Para responder a sus
                     consultas
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     <strong>Número de teléfono:</strong> Para contactarlo de
                     manera directa si es necesario
@@ -203,35 +194,35 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Section 3 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Lock className="text-[#1F01B9]" size={20} />
+                <Lock className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   3. Finalidad del Tratamiento de Datos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600  text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Los datos personales que usted nos proporciona serán utilizados
                 exclusivamente para las siguientes finalidades:
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     Responder a sus consultas y solicitudes de información
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>Brindarle atención al cliente y soporte</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>Establecer comunicación comercial</span>
                 </li>
               </ul>
@@ -239,25 +230,25 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Section 4 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Shield className="text-blue-600" size={20} />
+                <Shield className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   4. Base Legal del Tratamiento
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 El tratamiento de sus datos personales se fundamenta en las
                 siguientes bases legales:
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     <strong>Consentimiento:</strong> Al completar y enviar el
                     formulario de contacto, usted otorga su consentimiento
@@ -267,7 +258,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     <strong>
                       Ejecución de una relación contractual o precontractual:
@@ -282,18 +273,18 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Section 5 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Lock className="text-blue-600" size={20} />
+                <Lock className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   5. Seguridad y Confidencialidad
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Eufrosine ha implementado medidas técnicas, organizativas y
                 legales apropiadas para proteger sus datos personales contra el
@@ -304,24 +295,24 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
               <p>Estas medidas incluyen:</p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Almacenamiento seguro de datos con acceso restringido
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Uso de protocolos de encriptación para la transmisión de
                   información
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Capacitación del personal en protección de datos personales
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Políticas internas de confidencialidad y manejo de información
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Auditorías periódicas de seguridad
                 </li>
               </ul>
@@ -329,18 +320,18 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Section 6 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <FileText className="text-blue-600" size={20} />
+                <FileText className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   6. Plazo de Conservación de Datos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Sus datos personales serán conservados durante el tiempo
                 necesario para cumplir con las finalidades para las cuales
@@ -358,18 +349,18 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
           </section>
 
           {/* Sección 7 - Derechos ARCO (como ejemplo de continuación) */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
                 <UserCheck className="text-[#1F01B9]" size={20} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   7. Sus Derechos (Derechos ARCO)
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-6 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-6 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Como titular de datos personales, usted tiene los siguientes
                 derechos reconocidos en los artículos 18 al 23 de la Ley N°
@@ -406,21 +397,20 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
                     key={index}
                     className="bg-white p-5 rounded-2xl shadow-sm"
                   >
-                    <h3 className="text-base xl:text-lg text-[#1F01B9] font-semibold mb-2">
+                    <h3 className="text-sm lg:text-lg text-[#1F01B9] font-semibold mb-2">
                       {derecho.title}
                     </h3>
-                    <p className="text-gray-600 text-sm xl:text-base">
+                    <p className="text-gray-600 text-sm lg:text-base">
                       {derecho.desc}
                     </p>
                   </div>
                 ))}
               </div>
               <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100">
-                <p className="text-[#1F01B9] font-semibold">
+                <p className="text-[#1F01B9] text-xs md:text-sm lg:text-base font-semibold">
                   <strong>Ejercicio de derechos:</strong> Para ejercer
                   cualquiera de estos derechos, puede contactarnos enviando un
-                  correo electrónico a{" "}
-                  <strong>aguademesaeufrosineperu@gmail.com</strong> o mediante
+                  correo electrónico a aguademesaeufrosineperu@gmail.com o mediante
                   comunicación escrita a nuestro domicilio. Le responderemos en
                   un plazo no mayor a 10 días hábiles.
                 </p>
@@ -430,7 +420,7 @@ export function PrivacyPolicy({ onBack }: PrivacyPolicyProps) {
 
           {/* Final Note */}
           <section className="bg-linear-to-tr from-blue-800 via-blue-600 to-blue-400 p-8 rounded-3xl text-center">
-            <p className="text-white text-base xl:text-lg 2xl:text-xl leading-relaxed font-medium">
+            <p className="text-white text-sm lg:text-lg 2xl:text-xl leading-relaxed font-medium">
               Al utilizar nuestro sitio web y proporcionar sus datos personales
               a través del formulario de contacto, usted reconoce haber leído,
               comprendido y aceptado los términos establecidos en esta Política

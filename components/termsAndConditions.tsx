@@ -62,13 +62,13 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           <div className="text-center mt-7 lg:mt-0">
             <h1
               className={clsx(
-                "text-3xl sm:text-4xl 2xl:text-5xl font-bold text-[#1F01B9] mb-4",
+                "text-2xl lg:text-3xl 2xl:text-4xl font-bold text-[#1F01B9] mb-4",
                 pacifico.className
               )}
             >
               Términos y Condiciones
             </h1>
-            <p className="text-sm xl:text-base 2xl:text-xl text-gray-600">
+            <p className="text-sm lg:text-base 2xl:text-xl text-gray-600">
               Última actualización: 1 de noviembre de 2025
             </p>
           </div>
@@ -80,11 +80,11 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Introduction */}
           <section className="text-start px-4">
-            <p className="text-lg xl:text-xl text-gray-700 leading-relaxed">
+            <p className="text-sm xl:text-xl text-gray-700 leading-relaxed">
               Bienvenido a{" "}
               <span
                 className={clsx(
-                  "text-[#1F01B9] text-2xl font-semibold",
+                  "text-[#1F01B9] text-xl lg:text-2xl font-semibold",
                   pacifico.className
                 )}
               >
@@ -96,13 +96,13 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 1 */}
-          <section className="bg-gray-50 rounded-3xl p-4 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <FileText className="text-[#1F01B9]" size={20} />
+                <FileText className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   1. Información General
                 </h2>
               </div>
@@ -111,7 +111,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
               <div className="bg-white p-6 rounded-2xl space-y-3 shadow-sm text-base">
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Razón Social:</strong> Punto Vida H2O S.A.C.
@@ -119,7 +119,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>RUC:</strong> 20613393367
@@ -127,7 +127,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Domicilio:</strong> Av. Cincuentenario Nro 390,
@@ -136,16 +136,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                 </div>
                 <div className="flex items-start gap-2">
                   <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
-                  </div>
-                  <p>
-                    <strong>Correo electrónico:</strong>{" "}
-                    aguademesaeufrosineperu@gmail.com
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div>
-                    <CheckCircle className="w-5 text-[#1F01B9]" />
+                    <CheckCircle className="text-[#1F01B9]" size={18} />
                   </div>
                   <p>
                     <strong>Teléfono:</strong> 903 565 918
@@ -160,18 +151,18 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 2 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Scale className="text-[#1F01B9]" size={20} />
+                <Scale className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   2. Aceptación de Términos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Al utilizar nuestro sitio web, usted acepta estos términos y
                 condiciones en su totalidad. Si no está de acuerdo con estos
@@ -179,21 +170,21 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     Usted debe tener al menos 18 años para utilizar nuestros
                     servicios
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     Es responsable de mantener la confidencialidad de su
                     información de contacto
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>
                     Acepta proporcionar información veraz y actualizada
                   </span>
@@ -203,33 +194,33 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 3 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <ShoppingCart className="text-[#1F01B9]" size={20} />
+                <ShoppingCart className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900 mb-2">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900 mb-2">
                   3. Productos y Servicios
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Eufrosine ofrece agua de mesa purificada en diversas
                 presentaciones:
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>Botellas de 625ml</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>Botellas de 1 litro</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <span>Bidones de 20 litros</span>
                 </li>
               </ul>
@@ -244,43 +235,43 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 4 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Shield className="text-blue-600" size={20} />
+                <Shield className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   4. Pedidos y Entrega
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>Proceso de solicitud y entrega de nuestros productos:</p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     Los pedidos se realizan mediante contacto telefónico o a
                     través de nuestro formulario web
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     Las entregas están sujetas a disponibilidad de stock y
                     capacidad de distribución
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     Nos reservamos el derecho de rechazar pedidos que no cumplan
                     con nuestras políticas
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" />
                   <p>
                     La zona de cobertura de entrega es principalmente el
                     distrito de Hualmay y áreas aledañas
@@ -291,34 +282,34 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 5 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <FileText className="text-blue-600" size={20} />
+                <FileText className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   5. Precios y Pagos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>Condiciones económicas y métodos de pago:</p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Todos los precios están expresados en Soles (PEN)
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Los precios incluyen IGV según la legislación peruana
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Aceptamos pagos en efectivo al momento de la entrega
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Para pedidos corporativos, contamos con facturación
                   electrónica
                 </li>
@@ -327,45 +318,45 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 6 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Shield className="text-blue-600" size={20} />
+                <Shield className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   6. Garantías y Devoluciones
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Políticas de garantía de calidad y procedimientos de devolución:
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     Garantizamos la calidad y pureza de nuestro agua mediante
                     controles periódicos
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     En caso de productos defectuosos, aceptamos devoluciones
                     dentro de las 24 horas posteriores a la entrega
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     Para proceder con una devolución, el producto debe estar en
                     su empaque original y sin abrir
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   <p>
                     Las devoluciones por arrepentimiento no están permitidas por
                     tratarse de productos de consumo básico
@@ -376,18 +367,18 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 7 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Scale className="text-[#1F01B9]" size={20} />
+                <Scale className="text-[#1F01B9]" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   7. Limitación de Responsabilidad
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-6 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-6 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>Eufrosine no será responsable por:</p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -412,10 +403,10 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
                     key={index}
                     className="bg-white p-5 rounded-2xl shadow-sm"
                   >
-                    <h3 className="text-base xl:text-lg text-[#1F01B9] font-semibold mb-2">
+                    <h3 className="text-sm lg:text-lg text-[#1F01B9] font-semibold mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 text-sm xl:text-base">
+                    <p className="text-gray-600 text-xs lg:text-base">
                       {item.desc}
                     </p>
                   </div>
@@ -425,37 +416,37 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 8 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <FileText className="text-blue-600" size={20} />
+                <FileText className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   8. Propiedad Intelectual
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Todo el contenido de este sitio web, incluyendo pero no limitado
                 a:
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Logotipos, marcas y nombre comercial "Eufrosine"
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Diseños gráficos e interfaces de usuario
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Contenido textual y fotografías
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 text-[#1F01B9] mt-1 shrink-0" />
+                  <CheckCircle className="text-[#1F01B9] mt-1 shrink-0" size={18} />
                   Estructura y código del sitio web
                 </li>
               </ul>
@@ -467,18 +458,18 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 9 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
-                <Scale className="text-blue-600" size={20} />
+                <Scale className="text-blue-600" size={18} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   9. Modificaciones de Términos
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Nos reservamos el derecho de modificar estos términos y
                 condiciones en cualquier momento. Las modificaciones entrarán en
@@ -492,18 +483,18 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
           </section>
 
           {/* Section 10 */}
-          <section className="bg-gray-50 rounded-3xl p-6 xl:p-8">
+          <section className="bg-gray-50 rounded-3xl p-3 lg:p-8">
             <div className="flex items-start gap-2 lg:gap-6 mb-4 lg:mb-6">
               <div className="bg-blue-100 p-2 rounded-2xl">
                 <FileText className="text-blue-600" size={20} />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl xl:text-2xl text-gray-900">
+                <h2 className="text-base md:text-xl xl:text-2xl text-gray-900">
                   10. Legislación Aplicable
                 </h2>
               </div>
             </div>
-            <div className="lg:pl-16 space-y-4 text-gray-600 text-base xl:text-lg leading-relaxed">
+            <div className="lg:pl-16 space-y-4 text-gray-600 text-sm lg:text-lg leading-relaxed">
               <p>
                 Estos términos y condiciones se rigen por las leyes de la
                 República del Perú. Cualquier disputa relacionada con estos
@@ -527,7 +518,7 @@ export function TermsAndConditions({ onBack }: TermsAndConditionsProps) {
 
           {/* Final Note */}
           <section className="bg-linear-to-tr from-blue-800 via-blue-600 to-blue-400 p-8 rounded-3xl text-center">
-            <p className="text-white text-base xl:text-lg 2xl:text-xl leading-relaxed font-medium">
+            <p className="text-white text-sm lg:text-lg 2xl:text-xl leading-relaxed font-medium">
               Al utilizar nuestro sitio web y realizar pedidos de nuestros
               productos, usted reconoce haber leído, comprendido y aceptado
               todos los términos y condiciones aquí establecidos.
